@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Ігнорувати файли README
+README.md
+Readme-request.md
+
+
