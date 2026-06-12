@@ -1,13 +1,155 @@
 /* #region (**This Name your Section**) Mobile */
 
+.animal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.4);  
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.animal-modal {
+    position: relative;
+    background-color: #F7F6F4;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 320px;
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column; 
+    gap: 16px;
+    max-height: 90vh;
+    overflow-y: auto;  
+}
+
+.animal-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #2B2B2B;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.animal-modal-close:hover {
+    transform: scale(1.1);
+}
+
+.animal-modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.animal-modal-type {
+    font-size: 12px;
+    color: #7A7A7A;
+    margin-bottom: 4px;
+}
+
+.animal-modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2B2B2B;
+    margin-bottom: 4px;
+}
+
+.animal-modal-meta {
+    font-size: 14px;
+    color: #575757;
+    margin-bottom: 12px;
+}
+
+.animal-detail-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #2B2B2B;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.animal-detail-text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #575757;
+    margin-bottom: 8px;
+}
+
+.animal-modal-btn {
+    background-color: #85725A;  
+    color: #FFFFFF;
+    border: none;
+    height: 48px;      
+    padding: 12px 24px;        
+    border-radius: 8px;       
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.animal-modal-btn:hover,
+.animal-modal-btn:focus {
+    background-color: #6E5E4A;   
+}
+
+/* Клас для приховування модалки */
+.animal-backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
 /* #endregion **This Name your Section**) Mobile */
 
 /* #region **This Name your Section**) Tablet */
 @media screen and (min-width: 768px) {
+    .animal-modal {
+     max-width: 704px;
+     flex-direction: row;
+     gap: 24px;
+     padding: 40px;
+     }
+    
+    .animal-modal-thumb {
+     width: 50%;
+     flex-shrink: 0;
+     }
+    
+    .animal-modal-info {
+     width: 50%;
+     display: flex;
+     flex-direction: column;
+        }
+    
+    .animal-modal-btn {
+     margin-top: auto;
+     }
 }
 /* #endregion **This Name your Section**) Tablet \*/
 
 /* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
+    .animal-modal {
+         max-width: 960px;
+         gap: 32px;
+         padding: 64px;
+        }
 }
 /* #endregion **This Name your Section**) Desktop \*/
