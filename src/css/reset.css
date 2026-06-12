@@ -22,3 +22,12 @@ a {
   color: currentColor;
   text-decoration: none;
 }
+
+input {
+  padding: 0;
+}
+button {
+  padding: 0;
+  border: none;
+  background: none;
+}
