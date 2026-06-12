@@ -4,10 +4,11 @@
   | default @import url()
   |============================
 */
-/* Common styles */
-@import url('./base.css');
+/* Common styles Скидання та нормалізація завжди першими*/
+
 @import url('./modern-normalize.css');
 @import url('./reset.css');
+@import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
 
