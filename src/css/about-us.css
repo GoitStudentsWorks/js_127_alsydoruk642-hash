@@ -1,0 +1,88 @@
+/* #region (**about-us**) Mobile */
+
+.about-us {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.about-us-title {
+  margin-bottom: 40px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+}
+
+.about-us-slide {
+  position: relative;
+}
+
+.about-us-pict img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.about-us-content {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.about-us-text {
+  max-width: 295px;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #f6f4f1;
+}
+
+.swiper-pagination {
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+}
+
+/* #endregion **about-us**) Mobile */
+
+/* #region **about-us**) Tablet */
+@media screen and (min-width: 768px) {
+  .about-us-text {
+    max-width: 548px;
+  }
+
+  .about-us-content {
+    left: 32px;
+    bottom: 32px;
+  }
+}
+/* #endregion **about-us**) Tablet */
+
+/* #region **about-us**) Desktop */
+@media screen and (min-width: 1366px) {
+  .about-us {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .about-us-title {
+    font-size: 48px;
+  }
+
+  .about-us-content {
+    left: 64px;
+    bottom: 64px;
+  }
+
+  .about-us-text {
+    font-size: 18px;
+  }
+}
+/* #endregion **about-us**) Desktop */
