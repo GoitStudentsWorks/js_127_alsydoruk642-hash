@@ -1,7 +1,7 @@
 /* HERO для екранів від 320px до 767px*/ 
 .hero {
     padding-top: 64px;
-    padding-bottom: 20px;
+    padding-bottom: 80px;
     background-color: #f4f4f4;
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
         url('../img/webp/hero-mobil.webp');
@@ -50,6 +50,7 @@ screen and (min-resolution: 192dpi) {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 32px;
     letter-spacing: -1px;
+    max-width: 310px;
 }
 
 .hero-button {
@@ -75,7 +76,7 @@ screen and (min-resolution: 192dpi) {
 }
 
 /* 
-  TABLET Вмикається від 768px і більше
+  TABLET Вмикається від 768px 
   */
 @media screen and (min-width: 768px) {
     .hero {
@@ -83,23 +84,36 @@ screen and (min-resolution: 192dpi) {
         padding-bottom: 120px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('../img/webp/hero-tablet.webp');
+        /* background-size: 768px auto !important; */
+        background-position: right center !important;
     }
 
     .hero-container {
+        width: 100%;
         max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
         padding-left: 32px;
         padding-right: 32px;
+        box-sizing: border-box;
     }
 
     .hero-title {
-    font-size: 44px;
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     margin-bottom: 24px;
+    max-width: 622px;
+    width: 100%;
     }
 
     .hero-description {
         font-size: 16px;
         max-width: 440px;
         margin-bottom: 40px;
+        line-height: 1.5;
+        max-width: 530px;
+        letter-spacing: 0px;
     }
 }
 
@@ -109,6 +123,8 @@ screen and (min-width: 768px) and (min-resolution: 192dpi) {
     .hero {
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('../img/webp/hero-tablet@2.jpg');
+        background-size: 768px auto !important;
+        background-position: right center !important;
     }
 }
 
