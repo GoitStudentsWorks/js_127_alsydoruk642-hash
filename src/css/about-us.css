@@ -43,6 +43,27 @@
   color: #f6f4f1;
 }
 
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+.swiper-button-prev.about-us-button-prev,
+.swiper-button-next.about-us-button-next {
+  border: 1px solid #c3b49d;
+  border-radius: 8px;
+  padding: 12px;
+  width: 48px;
+  height: 48px;
+  background-color: #eee9e3;
+  color: #02060a;
+}
+
+.about-us-svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* #endregion **about-us**) Mobile */
 
 /* #region **about-us**) Tablet */
