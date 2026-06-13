@@ -34,36 +34,39 @@ screen and (min-resolution: 192dpi) {
 
 .hero-title {
     font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 1.2;
-    color: #ffffff;
-    margin-bottom: 16px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 1.15;
+        /* Зменшуємо інтервал для ідеального переносу слів */
+        color: #ffffff;
+        margin-bottom: 16px;
+        max-width: 250px;
 }
 
 .hero-description {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
-    line-height: 1.4;
+    line-height: 1.45;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 28px;
+    max-width: 270px;
 }
 
 .hero-button {
-    display: inline-block;
-    padding: 14px 28px;
-    background-color: rgba(141, 118, 95, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 12px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        transform 250ms ease;
+        display: inline-block;
+        padding: 14px 28px;
+        background-color: rgba(143, 117, 92, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #ffffff;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            transform 250ms ease;
 }
 
 .hero-button:hover,
@@ -94,13 +97,17 @@ screen and (min-resolution: 192dpi) {
     }
 
     .hero-title {
-        font-size: 44px;
-        max-width: 500px;
+    font-size: 44px;
+        line-height: 1.15;
+        max-width: 630px;
+        margin-bottom: 24px;
     }
 
     .hero-description {
-        font-size: 16px;
-        max-width: 450px;
+font-size: 16px;
+    line-height: 1.45;
+    max-width: 530px;
+    margin-bottom: 40px;
     }
 }
 
