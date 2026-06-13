@@ -98,7 +98,7 @@ export async function renderCategories() {
 function renderPetList(items) {
   const petListItems = (items ?? [])
     .map(
-      item => `<li class="pet-list-card-item" data-id="${item.species}">
+      item => `<li class="pet-list-card-item">
             <img class="pet-list-card-img" src="${item.image}" />
             <p class="pet-list-card-type">${item.species}</p>
             <p class="pet-list-card-name">${item.name}</p>

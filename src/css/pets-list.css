@@ -39,7 +39,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: 2px;
 }
 
 .pet-list-categories-btn {

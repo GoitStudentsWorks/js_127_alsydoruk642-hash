@@ -14,7 +14,7 @@ export async function getCategory(id, numPage, count) {
     page: numPage,
     limit: count,
   };
-  if (id !== 'all') params.categotyid = id;
+  if (id !== 'all') params.categoryId = String(id);
   const res = await axios.get(BASE_URL + ANIMALS, { params });
   return res.data;
 }
