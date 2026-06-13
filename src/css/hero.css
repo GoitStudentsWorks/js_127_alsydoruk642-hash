@@ -123,7 +123,7 @@ screen and (min-width: 768px) and (min-resolution: 192dpi) {
     .hero {
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('../img/webp/hero-tablet@2.jpg');
-        background-size: 100% auto;
+        background-size:cover;
         background-position: right top;
     }
 }
@@ -137,7 +137,7 @@ screen and (min-width: 768px) and (min-resolution: 192dpi) {
         padding-bottom: 400px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('../img/webp/hero-desktop.jpg');
-        background-size: 100% auto;
+        background-size:cover;
         background-position: right top;
     }
 
@@ -164,7 +164,7 @@ screen and (min-width: 1440px) and (min-resolution: 192dpi) {
     .hero {
         background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
             url('../img/webp/hero-desktop@2.jpg');
-        background-size: 100% auto;
+        background-size:cover;
         background-position: right top;
     }
 }
