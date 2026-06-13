@@ -1,13 +1,254 @@
 /* #region (**This Name your Section**) Mobile */
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.pet-list-section {
+  padding-top: 64px;
+  padding-bottom: 32px;
+}
+
+.pet-list-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: #02060a;
+}
+
+.pet-list-subtitle {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #02060a;
+}
+
+.pet-list-categories {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 2px;
+}
+
+.pet-list-categories-btn {
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 100px;
+  border: none;
+  padding: 10px 16px;
+  height: 41px;
+  color: #02060a;
+  background-color: transparent;
+  transition: font-weight 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.pet-list-categories-btn:hover,
+.pet-list-categories-btn:focus,
+.pet-list-categories-btn.active {
+  font-weight: 500;
+  background-color: #eee9e3;
+}
+
+.pet-list-cards {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.pet-list-card-item {
+  padding: 12px;
+  border-radius: 16px;
+  background-color: #eee9e3;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-list-card-img {
+  border-radius: 8px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pet-list-card-type {
+  margin-top: 16px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.pet-list-card-name {
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #02060a;
+}
+
+.pet-list-card-filter {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.pet-list-card-filter-item {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 1.5;
+  border-radius: 100px;
+  padding: 4px 10px;
+  color: #02060a;
+  background-color: rgba(1, 6, 10, 0.05);
+}
+
+.pet-list-card-age-gender {
+  margin-top: 4px;
+  display: flex;
+}
+
+.pet-list-card-age {
+  font-size: 10px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.pet-list-card-gender {
+  margin-left: 16px;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.pet-list-card-about {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.pet-list-card-more-btn {
+  margin-top: auto;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+  border: 1px solid #02060a;
+  border-radius: 8px;
+  padding: 8px 20px;
+  width: 100%;
+  height: 40px;
+  transition: background-color 250ms ease-in-out;
+}
+
+.pet-list-card-more-btn:hover,
+.pet-list-card-more-btn:focus,
+.pet-list-card-more-btn:active {
+  background-color: #c3b49d;
+}
+
+.pet-list-more-btn {
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ffffff;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  padding: 12px 24px;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background-color: #88765c;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+.pet-list-more-btn:hover,
+.pet-list-more-btn:focus,
+.pet-list-more-btn:active {
+  background-color: #eee9e3;
+  color: #02060a;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-width: 3px;
+  border-style: dashed solid solid dotted;
+  border-color: #ff3d00 #ff3d00 transparent #ff3d00;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 31px;
+  border: 10px solid transparent;
+  border-right-color: #ff3d00;
+  transform: rotate(-40deg);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /* #endregion **This Name your Section**) Mobile */
 
 /* #region **This Name your Section**) Tablet */
 @media screen and (min-width: 768px) {
+  .pet-list-card-item {
+    width: calc((100% - 32px) / 2);
+  }
+  .pet-list-more-btn {
+    width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 /* #endregion **This Name your Section**) Tablet \*/
 
 /* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
+  .pet-list-section {
+    padding-top: 80px;
+  }
+  .pet-list-categories {
+    margin-top: 40px;
+  }
+  .pet-list-cards {
+    margin-top: 40px;
+  }
+  .pet-list-card-item {
+    width: calc((100% - 2 * 32px) / 3);
+  }
+  .pet-list-more-btn {
+    width: 192px;
+    height: 48px;
+  }
 }
 /* #endregion **This Name your Section**) Desktop \*/
