@@ -1,13 +1,114 @@
-/* #region (**This Name your Section**) Mobile */
 
-/* #endregion **This Name your Section**) Mobile */
+.backdrop {
+  position: fixed;
+  inset: 0;
 
-/* #region **This Name your Section**) Tablet */
+  background: rgba(0, 0, 0, 0.4);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 250ms;
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  width: 100%;
+  height: 661px;
+  background-color: #F6F4F1;
+}
+.menu-header {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: auto;
+    padding: 0 12px 0 20px;
+    margin: 0;
+}
+.menu-logo {
+transform: transition 0.3s ease;
+}
+.menu-logo:hover,
+.menu-logo:focus,
+.menu-logo:active {
+  transform: scale(1.05);
+}
+.menu-icon-logo
+    {
+    display: block;
+    }  
+    
+.close-btn {
+    position: absolute;
+    top : 8px;
+    right: 12px;
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    width: 48px;
+    height: 48px;
+    font-size: 40px;
+    }
+   
+.mobile-list {
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #02060A;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    gap: 32px;
+    text-align: left;
+    padding: 8px 20px 64px;
+}
+.menu-friend-btn {
+    border: 1px solid #88765C;
+    border-radius: 8px;
+    padding: 8px 20px;
+    width: 100%;
+    height: 37px;
+    display: block;
+    background-color: #88765C;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+    text-align: center;
+}
+    .menu-friend-btn:hover,
+    .menu-friend-btn:focus,
+    .menu-friend-btn:active {
+        background-color: #C3B49D;
+        color: #02060A;
+   }
 @media screen and (min-width: 768px) {
+   .menu-header {
+    padding: 0 32px;
 }
-/* #endregion **This Name your Section**) Tablet \*/
-
-/* #region **This Name your Section**) Desktop */
+.mobile-list {
+    text-align: center;
+    padding: 8px 32px 64px;
+}
+.menu-friend-btn {
+    width: 196px;
+    margin: 0 auto;
+}
+    .mobile-menu {
+  width: 100%;
+  height: 604px;
+}
+}
 @media screen and (min-width: 1366px) {
+    .backdrop {
+display: none;
 }
-/* #endregion **This Name your Section**) Desktop \*/
+}
