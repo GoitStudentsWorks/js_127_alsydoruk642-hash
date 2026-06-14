@@ -168,3 +168,15 @@ screen and (min-width: 1440px) and (min-resolution: 192dpi) {
         background-position: right top;
     }
 }
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
