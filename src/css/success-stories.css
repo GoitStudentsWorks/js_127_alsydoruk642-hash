@@ -15,6 +15,7 @@
 }
 
 .success-stories-rate{
+    display: flex;
     padding-bottom: 32px;
 }
 .success-stories-text{
@@ -65,6 +66,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 64px;
 }
 .swiper-pagination {
     position: static !important;
@@ -74,10 +76,6 @@
 .swiper {
     --swiper-theme-color: #02060a;
     
-}
-.swiper-pagination-bullets.swiper-pagination-horizontal {
-    transform: none !important;
-    left: 0 !important;
 }
 
 
