@@ -95,7 +95,38 @@
 .about-us-controls
   .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
   width: auto;
+  left: auto;
+  transform: none;
 }
+/* --------------- */
+.about-us-swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #02060a;
+  opacity: 0.2;
+  transition: all 250ms ease;
+}
+
+.about-us-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* --------------- */
+
+.about-us-swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 4px !important;
+  border-radius: 50%;
+  background-color: #02060a;
+  opacity: 0.2;
+  transition: opacity 250ms ease;
+}
+
+.about-us-swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+/* ------------------- */
 
 /* #endregion **about-us**) Mobile */
 

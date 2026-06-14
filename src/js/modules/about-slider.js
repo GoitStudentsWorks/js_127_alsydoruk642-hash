@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // init Swiper:
-const swiper = new Swiper('.swiper', {
+const aboutUsSwiper = new Swiper('.swiper', {
   // configure Swiper to use modules
   modules: [Navigation, Pagination],
 
@@ -17,8 +17,26 @@ const swiper = new Swiper('.swiper', {
   },
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.about-us-swiper-pagination',
     clickable: true,
-    type: 'bullets',
+    dynamicBullets: window.innerWidth < 768,
   },
 });
+
+const mediaQuery = window.matchMedia('(max-width: 767px)'); // для мобільних пристроїв
+
+function updatePagination(e) {
+  console.log('matches:', e.matches);
+
+  aboutUsSwiper.params.pagination.dynamicBullets = e.matches;
+
+  aboutUsSwiper.pagination.destroy();
+  aboutUsSwiper.pagination.init();
+  aboutUsSwiper.pagination.render();
+  aboutUsSwiper.pagination.update();
+
+  console.log(aboutUsSwiper.params.pagination.dynamicBullets);
+}
+
+updatePagination(mediaQuery);
+mediaQuery.addEventListener('change', updatePagination);
