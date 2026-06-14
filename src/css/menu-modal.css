@@ -1,13 +1,114 @@
-/* #region (**This Name your Section**) Mobile */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
 
-/* #endregion **This Name your Section**) Mobile */
+  opacity: 0;
+  visibility: hidden;
 
-/* #region **This Name your Section**) Tablet */
+  transition: 250ms;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform: translateX(100%);
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+.no-scroll {
+  overflow: hidden;
+}
+.menu-header {
+  width: 100%;
+  height: 64px;
+  padding: 5px 12px 0 20px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  border: none;
+  background-color: transparent;
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.mobile-list {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 32px;
+  text-align: left;
+  padding: 8px 20px 64px;
+}
+.menu-friend-btn {
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  padding: 8px 20px;
+  width: 100%;
+  height: 37px;
+  display: block;
+  background-color: #88765c;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ffffff;
+  text-align: center;
+}
+.menu-friend-btn:hover,
+.menu-friend-btn:focus,
+.menu-friend-btn:active {
+  background-color: #c3b49d;
+  color: #02060a;
+}
 @media screen and (min-width: 768px) {
+  .menu-header {
+    padding: 0 32px;
+  }
+  .mobile-list {
+    text-align: center;
+    padding: 8px 32px 64px;
+  }
+  .menu-friend-btn {
+    width: 196px;
+    margin: 0 auto;
+  }
+  .mobile-menu {
+    width: 100%;
+    height: 604px;
+  }
 }
-/* #endregion **This Name your Section**) Tablet \*/
-
-/* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
+  .backdrop {
+    display: none;
+  }
+  .mobile-menu {
+    display: none;
+  }
 }
-/* #endregion **This Name your Section**) Desktop \*/
