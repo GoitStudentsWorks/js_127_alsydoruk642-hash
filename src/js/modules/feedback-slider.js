@@ -10,9 +10,7 @@ import starOn from '../../img/webp/stars/vector_1.png';
 import starOff from '../../img/webp/stars/vector_0.png';
 import starHalf from '../../img/webp/stars/vector_05.png';
 
-
-
-const gallery = document.querySelector('.success-stories-list')
+const gallery = document.querySelector('.success-stories-list');
 
 export function createFeedback(feedbacks) {
   const markup = feedbacks
@@ -34,25 +32,21 @@ export function createFeedback(feedbacks) {
       `
     )
     .join('');
-  console.log(feedbacks)
+  console.log(feedbacks);
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
-  
   document.querySelectorAll('.success-stories-rate').forEach(el => {
     const raty = new Raty(el, {
-        score: Number(el.dataset.rate),
-        readOnly: true,
-        starOn,
-        starOff,
-        starHalf
-      });
+      score: Number(el.dataset.rate),
+      readOnly: true,
+      starOn,
+      starOff,
+      starHalf,
+    });
     raty.init();
-
-    
   });
 
-  
   const swiper = new Swiper('.mySwiper', {
     modules: [Navigation, Pagination],
 
@@ -74,7 +68,6 @@ export function createFeedback(feedbacks) {
         slidesPerView: 2,
         spaceBetween: 32,
       },
-    }
-
+    },
   });
 }
