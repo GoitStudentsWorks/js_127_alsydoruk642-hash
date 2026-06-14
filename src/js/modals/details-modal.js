@@ -1,67 +1,107 @@
-const backdrop = document.querySelector('.animal-backdrop');
-const modalContainer = document.querySelector('.animal-modal');
 
-// --- ФУНКЦІЇ ЗАКРИТТЯ ---
+
+/**
+ 
+ * @param {Object} animal
+ */
+export function openAnimalModal(animal) {
+  const backdrop = document.querySelector('.animal-backdrop');
+  if (!backdrop) return;
+
+  backdrop.innerHTML = `
+    <div class="animal-modal">
+      <button type="button" class="animal-modal-close" aria-label="Close modal">
+        &times;
+      </button>
+
+      <div class="animal-modal-thumb">
+        <img src="${animal.img}" alt="${animal.name}" class="animal-modal-img" />
+      </div>
+
+      <div class="animal-modal-info">
+        <p class="animal-modal-type">${animal.type}</p>
+        <h2 class="animal-modal-title">${animal.name}</h2>
+        <p class="animal-modal-meta">${animal.meta}</p>
+
+        <div class="animal-modal-scroll-container">
+          
+          <div class="animal-modal-details-block">
+            <p class="animal-detail-label">Опис:</p>
+            <p class="animal-detail-text">${animal.description}</p>
+          </div>
+          
+          <div class="animal-modal-details-block">
+            <p class="animal-detail-label">Здоров'я:</p>
+            <p class="animal-detail-text">${animal.health}</p>
+          </div>
+
+          <div class="animal-modal-details-block">
+            <p class="animal-detail-label">Поведінка:</p>
+            <p class="animal-detail-text">${animal.behavior}</p>
+          </div>
+          
+        </div>
+        
+        <button type="button" class="animal-modal-btn">Взяти додому</button>
+      </div>
+    </div>
+  `;
+
+  backdrop.classList.remove('is-hidden');
+  
+  document.body.style.overflow = 'hidden';
+
+  backdrop.querySelector('.animal-modal-close').addEventListener('click', closeAnimalModal);
+  backdrop.addEventListener('click', onBackdropClick);
+  window.addEventListener('keydown', onEscPress);
+}
 
 function closeAnimalModal() {
-  backdrop.classList.add('is-hidden');
-  
-  // Знімаємо слухач клавіатури, коли модалка закрита
-  document.removeEventListener('keydown', onEscKeyPress);
+  const backdrop = document.querySelector('.animal-backdrop');
+  if (backdrop) {
+    backdrop.classList.add('is-hidden');
+    backdrop.innerHTML = ''; 
+  }
+  document.body.style.overflow = '';
+  window.removeEventListener('keydown', onEscPress);
 }
 
 function onBackdropClick(event) {
-  // Закриваємо якщо клікнули на бекдроп, а не на контент
   if (event.target === event.currentTarget) {
-    closeAnimalModal();  
+    closeAnimalModal();
   }
 }
 
-function onEscKeyPress(event) {
+function onEscPress(event) {
   if (event.code === 'Escape') {
     closeAnimalModal();
   }
 }
 
-// --- ГОЛОВНА ФУНКЦІЯ (ЕКСПОРТ) ---
 
-export function openAnimalModal(animalData) {
-  backdrop.classList.remove('is-hidden');
- 
-  modalContainer.innerHTML = `
-    <button type="button" class="animal-modal-close" aria-label="Close modal">
-      &times;
-    </button>
-    
-    <div class="animal-modal-thumb">
-      <img src="${animalData.img}" alt="${animalData.name}" class="animal-modal-img" />
-    </div>
-    
-    <div class="animal-modal-info">
-      <p class="animal-modal-type">${animalData.type}</p>
-      <h2 class="animal-modal-title">${animalData.name}</h2>
-      <p class="animal-modal-meta">${animalData.age} &bull; ${animalData.gender}</p>
-      
-      <div class="animal-modal-details">
-        <p class="animal-modal-label">Опис:</p>
-        <p class="animal-modal-text">${animalData.description}</p>
-      </div>
-      
-      <button type="button" class="btn-action take-home-btn">Взяти додому</button>
-    </div>
-  `;
+document.addEventListener('DOMContentLoaded', () => {
+  const petListContainer = document.querySelector('.pet-list-cards');
 
-  const closeButton = modalContainer.querySelector('.animal-modal-close');
-  const takeHomeButton = modalContainer.querySelector('.take-home-btn');
+  if (petListContainer) {
+    petListContainer.addEventListener('click', (event) => {
+           const moreBtn = event.target.closest('.pet-list-card-more-btn');
+      if (!moreBtn) return;
 
-  // Слухачі
-  closeButton.addEventListener('click', closeAnimalModal);
-  backdrop.addEventListener('click', onBackdropClick);
-  document.addEventListener('keydown', onEscKeyPress);
+            const card = moreBtn.closest('.pet-list-card') || moreBtn.closest('li');
+      if (!card) return;
 
-  // Логіка кнопки "Взяти додому"
-  takeHomeButton.addEventListener('click', () => {
-    closeAnimalModal(); 
-    console.log('Відкриваємо модалку замовлення...');
-  });
-}
+           const animalData = {
+        img: card.querySelector('.pet-list-card-img')?.src || card.querySelector('img')?.src || '',
+        name: card.querySelector('.pet-list-card-title')?.textContent?.trim() || 'Тваринка',
+        type: card.querySelector('.pet-list-card-type')?.textContent?.trim() || 'Вид',
+        meta: card.querySelector('.pet-list-card-meta')?.textContent?.trim() || card.querySelector('.animal-modal-meta')?.textContent?.trim() || 'Вік і стать',
+        
+                description: card.querySelector('.pet-list-card-desc')?.textContent?.trim() || 'Ніжний та ласкавий малюк. Дуже любить сидіти на ручках.',
+        health: card.querySelector('.pet-list-card-health')?.textContent?.trim() || 'Здоровий, кастрований, вакцинований. Потребує регулярного вичісування шерсті.',
+        behavior: card.querySelector('.pet-list-card-behavior')?.textContent?.trim() || 'Бажано бути єдиною твариною в сім\'ї. Не любить конкуренції за увагу.'
+      };
+
+            openAnimalModal(animalData);
+    });
+  }
+});
