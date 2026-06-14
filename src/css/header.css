@@ -48,7 +48,7 @@ a:disabled {
   display: block;
 }
 .icon-logo {
-  transform: transition 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .icon-logo:hover,
 .icon-logo:focus,
@@ -72,12 +72,51 @@ a:disabled {
   fill: #2f2f37;
 }
 .friend-btn {
+  display: block;
+  background-color: #88765c;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  width: 130px;
+  height: 40px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.friend-btn:hover {
+  background-color: #c3b49d;
+  color: #02060a;
+}
+
+.friend-btn:active {
+  transform: scale(0.97);
+}
+
+.friend-btn:focus-visible {
+  outline: 2px solid #c3b49d;
+  outline-offset: 2px;
+}
+.friend-btn:disabled {
+  color: #ffffff;
+  background-color: #88765c;
+  opacity: 0.3;
+}
+.friend-btn {
   display: none;
 }
+
 @media screen and (min-width: 768px) {
   .header-container {
     padding: 0 32px;
     width: 100%;
+  }
+  .friend-btn {
+    display: none;
   }
 }
 @media screen and (min-width: 1366px) {
@@ -112,27 +151,6 @@ a:disabled {
   }
   .friend-btn {
     display: block;
-    background-color: #88765c;
-    font-family: inherit;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #ffffff;
-    border: 1px solid #88765c;
-    border-radius: 8px;
-    width: 130px;
-    height: 40px;
-  }
-  .friend-btn:hover,
-  .friend-btn:focus,
-  .friend-btn:active {
-    background-color: #c3b49d;
-    color: #02060a;
-  }
-  .friend-btn:disabled {
-    color: #ffffff;
-    background-color: #88765c;
-    opacity: 0.3;
   }
   .burger-btn {
     display: none;

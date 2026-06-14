@@ -5,109 +5,147 @@
 
   opacity: 0;
   visibility: hidden;
+  z-index: 999;
 
-  transition: 250ms;
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
 }
 
-.is-open {
+.backdrop.is-open {
   opacity: 1;
   visibility: visible;
 }
 
 .mobile-menu {
-  z-index: 1000;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
+
   width: 100%;
   height: 100%;
-  background: #fff;
+
+  background-color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+
   transform: translateX(100%);
+  transition: transform 250ms ease;
+
+  z-index: 1000;
 }
+
 .mobile-menu.is-open {
   transform: translateX(0);
 }
+
 .no-scroll {
   overflow: hidden;
 }
+
 .menu-header {
-  width: 100%;
-  height: 64px;
-  padding: 5px 12px 0 20px;
-  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  height: 64px;
+  padding: 5px 12px 0 20px;
+
+  flex-shrink: 0;
 }
+
 .menu-logo {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .close-btn {
-  border: none;
-  background-color: transparent;
   width: 48px;
   height: 48px;
-  display: block;
+
+  border: none;
+  background-color: transparent;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
 }
 
 .mobile-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  padding: 8px 20px;
+  margin: 0;
+
+  flex-grow: 1;
+
   font-family: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
   color: #02060a;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 32px;
-  text-align: left;
-  padding: 8px 20px 64px;
 }
+
+.mobile-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .menu-friend-btn {
+  width: calc(100% - 40px);
+  height: 37px;
+
+  margin: 0 20px 20px;
+
   border: 1px solid #88765c;
   border-radius: 8px;
-  padding: 8px 20px;
-  width: 100%;
-  height: 37px;
-  display: block;
+
   background-color: #88765c;
+  color: #ffffff;
+
   font-family: inherit;
-  font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
-  color: #ffffff;
-  text-align: center;
+
+  cursor: pointer;
 }
+
 .menu-friend-btn:hover,
-.menu-friend-btn:focus,
-.menu-friend-btn:active {
+.menu-friend-btn:focus {
   background-color: #c3b49d;
   color: #02060a;
 }
+
 @media screen and (min-width: 768px) {
   .menu-header {
     padding: 0 32px;
   }
+
   .mobile-list {
+    padding: 8px 32px;
     text-align: center;
-    padding: 8px 32px 64px;
   }
+
   .menu-friend-btn {
     width: 196px;
-    margin: 0 auto;
+    margin: 0 auto 32px;
   }
+
   .mobile-menu {
-    width: 100%;
     height: 604px;
   }
 }
+
 @media screen and (min-width: 1366px) {
-  .backdrop {
-    display: none;
-  }
+  .backdrop,
   .mobile-menu {
     display: none;
   }
