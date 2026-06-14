@@ -1,15 +1,7 @@
-import { getFeedbacks } from './js/api/api-feetback';
-import { createFeedback } from './js/modules/feedback-slider';
+import { renderFeedbacks } from './js/modules/faq.js';
+import { getFeedbacks } from './js/api/api-feetback.js';
+import { createFeedback } from './js/modules/feedback-slider.js';
 
-
-async function renderFeedbacks() {
-  try {
-    const feedbacks = await getFeedbacks();
-
-    createFeedback(feedbacks);
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-renderFeedbacks();
+getFeedbacks().then(feedbacks => {
+  createFeedback(feedbacks);
+});
