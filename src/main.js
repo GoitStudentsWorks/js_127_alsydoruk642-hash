@@ -1,7 +1,7 @@
-import Accordion from "accordion-js";
+import './js/modules/about-slider';
+import { renderCategories, startPetList } from './js/modules/pets-list';
 
+renderCategories();
+startPetList('all');
 
-new Accordion('.accordion-container', {
-  duration: 300,
-  showMultiple: false,
-});
+import { openModal, closeModal } from './js/modals/modal-cl-op';
