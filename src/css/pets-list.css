@@ -194,6 +194,9 @@
   background-color: #eee9e3;
   color: #02060a;
 }
+.pet-list-more-btn.hidden {
+  display: none;
+}
 
 .loader {
   width: 48px;
