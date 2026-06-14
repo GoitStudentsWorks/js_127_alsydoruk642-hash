@@ -1,1 +1,4 @@
-import './js/order-modal.js';
+import { renderCategories, startPetList } from './js/modules/pets-list';
+
+renderCategories();
+startPetList('all');
