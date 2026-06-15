@@ -47,7 +47,7 @@ export function openAnimalModal(animal) {
 
   backdrop.classList.remove('is-hidden');
 
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('no-scroll');
 
   // Стандартні слухачі закриття
   backdrop
@@ -66,7 +66,7 @@ export function openAnimalModal(animal) {
       if (orderModal) {
         orderModal.classList.remove('is-hidden');
 
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('no-scroll');
         openModal(animal._id);
       } else {
         console.warn(
@@ -83,7 +83,7 @@ function closeAnimalModal() {
     backdrop.classList.add('is-hidden');
     backdrop.innerHTML = '';
   }
-  document.body.style.overflow = '';
+  document.body.classList.remove('no-scroll');
   window.removeEventListener('keydown', onEscPress);
 }
 
