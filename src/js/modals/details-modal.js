@@ -53,25 +53,22 @@ export function openAnimalModal(animal) {
   backdrop.addEventListener('click', onBackdropClick);
   window.addEventListener('keydown', onEscPress);
 
-  // ========================================================
-  // ОНОВЛЕНИЙ ФУНКЦІОНАЛ: ЗВ'ЯЗОК З МОДАЛКОЮ (order-modal)
-  // ========================================================
+
+    
   const takeHomeBtn = backdrop.querySelector('.animal-modal-btn');
   if (takeHomeBtn) {
     takeHomeBtn.addEventListener('click', () => {
-      // 1. Закриваємо поточну модалку з деталями
       closeAnimalModal();
 
-      // 2. Шукаємо на сторінці майбутню модалку Роми за ID
-        const orderModal = document.getElementById('order-modal');
-        
-      // Модалка з формою вже є.
+    
+      const orderModal = document.querySelector('.backdrop-order');
+      
       if (orderModal) {
         orderModal.classList.remove('is-hidden');
+        
         document.body.style.overflow = 'hidden'; 
       } else {
-        // Якщо розмітки колеги ще немає на сторінці, звіт в консоль
-        console.log('Кнопка "Взяти додому" працює!');
+        console.warn('Бекдроп з класом .backdrop-order не знайдено на сторінці.');
       }
     });
   }
