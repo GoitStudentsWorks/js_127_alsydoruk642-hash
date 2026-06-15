@@ -43,10 +43,10 @@
   color: #f6f4f1;
 }
 
-.swiper-button-prev::after,
+/* .swiper-button-prev::after,
 .swiper-button-next::after {
   display: none;
-}
+} */
 
 .swiper-button-prev.about-us-button-prev,
 .swiper-button-next.about-us-button-next {

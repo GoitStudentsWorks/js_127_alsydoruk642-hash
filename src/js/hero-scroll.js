@@ -1,17 +1,21 @@
 // Функція для плавного прокручування
 export function initSmoothScroll() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
+  document.addEventListener('click', e => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
 
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
+    e.preventDefault();
+
+    const id = anchor.getAttribute('href');
+    const target = document.querySelector(id);
+
+    if (!target) return;
+
+    const top = target.getBoundingClientRect().top + window.scrollY;
+
+    document.scrollingElement.scrollTo({
+      top,
+      behavior: 'smooth',
     });
   });
 }
@@ -20,7 +24,7 @@ export function initSmoothScroll() {
 export function initHeroAnimation() {
   window.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.fade-in-element');
-    
+
     elementsToAnimate.forEach((element, index) => {
       setTimeout(() => {
         element.classList.add('visible');
