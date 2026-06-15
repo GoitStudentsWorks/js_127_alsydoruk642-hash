@@ -43,8 +43,7 @@
   padding: 12px;
   position: static;
 }
-/* !important;
-} */
+
 .swiper-button-next.success-button-next:hover,
 .swiper-button-prev.success-button-prev:hover,
 .swiper-button-next.success-button-next:focus,
@@ -88,16 +87,35 @@
 .success-stories .swiper {
   --swiper-theme-color: #02060a;
 }
+.mySwiper
+  .swiper-pagination.success-swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+  left: auto;
+  transform: none;
+  width: 120px !important;
+}
+
+.mySwiper
+  .swiper-pagination.success-swiper-pagination.swiper-pagination-bullets-dynamic.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullet:active {
+  width: 120px;
+}
 
 /* #endregion **This Name your Section**) Mobile */
 
 /* #region **This Name your Section**) Tablet */
 @media screen and (min-width: 768px) {
+  .mySwiper
+    .swiper-pagination.success-swiper-pagination.swiper-pagination-bullets-dynamic.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 80px;
+  }
 }
 /* #endregion **This Name your Section**) Tablet \*/
 
 /* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
+  .mySwiper
+    .swiper-pagination.success-swiper-pagination.swiper-pagination-bullets-dynamic.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: 80px;
+  }
   .success-stories-title {
     padding-top: 80px;
     font-size: 48px;
