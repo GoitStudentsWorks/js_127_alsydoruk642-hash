@@ -22,6 +22,7 @@ function checkCountCards() {
 function showLoadMoreButton() {
   if (moreBtn) {
     moreBtn.classList.remove('hidden');
+    moreBtn.blur();
   }
 }
 
