@@ -61,10 +61,6 @@ body.no-scroll {
   display: none;
 }
 
-.application {
-  position: relative;
-}
-
 .app-modal-title {
   width: 240px;
   margin: 0;
@@ -195,6 +191,7 @@ body.no-scroll {
   line-height: 1.5;
   color: #fff;
   background-color: #88765c;
+  cursor: pointer;
 
   transition:
     opacity 250ms ease-in-out,
@@ -217,10 +214,6 @@ body.no-scroll {
 .modal-button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-}
-
-body.no-scroll {
-  overflow: hidden;
 }
 
 /* #endregion **This Name your Section**) Mobile */
