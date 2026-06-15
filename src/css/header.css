@@ -72,7 +72,6 @@ html {
   fill: #2f2f37;
 }
 .friend-btn {
-  margin: 0 auto;
   display: block;
   background-color: #88765c;
   font-family: inherit;
@@ -82,8 +81,8 @@ html {
   color: #ffffff;
   border: 1px solid #88765c;
   border-radius: 8px;
-  width: 335px;
-  height: 37px;
+  width: 130px;
+  height: 40px;
 
   cursor: pointer;
   transition: all 0.2s ease;
@@ -109,11 +108,17 @@ html {
   background-color: #88765c;
   opacity: 0.3;
 }
+.friend-btn {
+  display: none;
+}
 
 @media screen and (min-width: 768px) {
   .header-container {
     padding: 0 32px;
     width: 100%;
+  }
+  .friend-btn {
+    display: none;
   }
 }
 @media screen and (min-width: 1366px) {
