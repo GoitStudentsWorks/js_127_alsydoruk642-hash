@@ -55,14 +55,12 @@ function validateField(field, input) {
 function checkForm() {
   const nameValid = validateField(fields[0], nameInput);
   const phoneValid = validateField(fields[1], phoneInput);
-  const commentValid = validateField(fields[2], commentInput);
 
-  button.disabled = !(nameValid && phoneValid && commentValid);
+  button.disabled = !(nameValid && phoneValid);
 }
 
 nameInput.addEventListener('input', checkForm);
 phoneInput.addEventListener('input', checkForm);
-commentInput.addEventListener('input', checkForm);
 
 form.addEventListener('submit', async e => {
   e.preventDefault();

@@ -122,7 +122,6 @@ body.no-scroll {
   height: 180px;
   background-color: rgba(2, 6, 10, 0.05);
   resize: none;
-  margin-bottom: 8px;
 
   transition:
     opacity 250ms ease-in-out,
