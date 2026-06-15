@@ -2,7 +2,7 @@ import { createOrder } from '../api/api-order.js';
 import Swal from 'sweetalert2';
 
 const closeBtn = document.querySelector('.app-modal-close');
-const modal = document.querySelector('.backdrop');
+const modal = document.querySelector('.backdrop-order');
 
 const form = document.querySelector('.app-modal-form');
 const button = document.querySelector('.modal-button');
@@ -92,8 +92,12 @@ form.addEventListener('submit', async e => {
     comment: commentInput.value.trim(),
     animalId: selectedAnimalId,
   };
+  console.log('selectedAnimalId:', selectedAnimalId);
+  console.log('type:', typeof selectedAnimalId);
+  console.log('orderData:', orderData);
 
   try {
+    console.log('selectedAnimalId:', selectedAnimalId);
     const result = await createOrder(orderData);
 
     Swal.fire({
