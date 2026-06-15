@@ -1,29 +1,36 @@
+<!-- Header -->
 <header class="header" data-modal>
   <div class="header-container">
     <nav class="header-nav">
       <a class="header-logo" href="./index.html">
         <svg class="icon-logo" width="157" height="51">
-          <use href="../public/sprite.svg#icon-logotype"></use>
+          <use href="./sprite.svg#icon-logotype"></use>
         </svg>
       </a>
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="#pets" class="nav-link carrent">Знайди друга</a>
+          <a href="#pets-list" class="nav-link carrent">Знайди друга</a>
         </li>
-        <li class="nav-item"><a href="#about" class="nav-link">Про нас</a></li>
+        <li class="nav-item">
+          <a href="#about-us" class="nav-link">Про нас</a>
+        </li>
         <li class="nav-item">
           <a href="#faq" class="nav-link">Часті запитання</a>
         </li>
         <li class="nav-item">
-          <a href="#stories" class="nav-link">Історії успіху</a>
+          <a href="#success-stories" class="nav-link">Історії успіху</a>
         </li>
       </ul>
     </nav>
-    <button class="friend-btn" type="button">Взяти друга</button>
+    <button class="friend-btn" onclick="location.href = '#pets-list'">
+      Взяти друга
+    </button>
     <button class="burger-btn" type="button" data-modal-open>
       <svg class="icon-burger" width="24" height="24">
-        <use href="../public/sprite.svg#icon-burger"></use>
+        <use href="./sprite.svg#icon-burger"></use>
       </svg>
     </button>
   </div>
 </header>
+
+

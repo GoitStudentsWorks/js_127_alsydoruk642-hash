@@ -34,3 +34,12 @@ backdrop.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
+
+/* CLOSE on menu link click */
+const menuLinks = document.querySelectorAll('.mobile-menu a');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    closeModal();
+  });
+});

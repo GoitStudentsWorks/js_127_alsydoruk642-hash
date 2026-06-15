@@ -1,4 +1,5 @@
 import { getCategories, getCategory } from '../api/api-categories';
+console.log('pets-list.js loaded');
 
 let curPage = 1;
 let countPages = 1;
@@ -9,7 +10,7 @@ let heightCard = 0;
 const categoriesElem = document.querySelector('.pet-list-categories');
 const petListElem = document.querySelector('.pet-list-cards');
 const moreBtn = document.querySelector('.pet-list-more-btn');
-const loader = document.querySelector('.pet-list-loader');
+const loader = document.querySelector('.loader');
 
 categoriesElem.addEventListener('click', onCategoriesClick);
 petListElem.addEventListener('click', onCardClick);
@@ -22,6 +23,7 @@ function checkCountCards() {
 function showLoadMoreButton() {
   if (moreBtn) {
     moreBtn.classList.remove('hidden');
+    moreBtn.blur();
   }
 }
 
@@ -96,6 +98,7 @@ export async function renderCategories() {
 }
 
 function renderPetList(items) {
+  console.log('renderPetList', items.length);
   const petListItems = (items ?? [])
     .map(
       item => `<li class="pet-list-card-item">
@@ -127,6 +130,7 @@ function renderPetList(items) {
 }
 
 export async function startPetList(category) {
+  console.log('startPetList', category);
   categoryId = category;
   curPage = 1;
   countCards = checkCountCards();
@@ -157,6 +161,7 @@ export async function startPetList(category) {
 }
 
 async function continuePetList() {
+  console.log('continuePetList');
   curPage += 1;
   countCards = checkCountCards();
   hideLoadMoreButton();

@@ -57,8 +57,8 @@ export function createFeedback(feedbacks) {
 
     pagination: {
       el: '.swiper-pagination',
-      dynamicBullets: false,
       clickable: true,
+      dynamicBullets: window.innerWidth > 768,
     },
 
     slidesPerView: 1,
@@ -69,5 +69,14 @@ export function createFeedback(feedbacks) {
         spaceBetween: 32,
       },
     },
+  });
+  window.addEventListener('resize', () => {
+    swiper.update();
+    swiper.params.pagination.dynamicBullets = window.innerWidth > 768;
+
+    swiper.pagination.destroy();
+    swiper.pagination.init();
+    swiper.pagination.render();
+    swiper.pagination.update();
   });
 }
