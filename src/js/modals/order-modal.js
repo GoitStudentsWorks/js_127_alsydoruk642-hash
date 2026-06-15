@@ -92,12 +92,8 @@ form.addEventListener('submit', async e => {
     comment: commentInput.value.trim(),
     animalId: selectedAnimalId,
   };
-  console.log('selectedAnimalId:', selectedAnimalId);
-  console.log('type:', typeof selectedAnimalId);
-  console.log('orderData:', orderData);
 
   try {
-    console.log('selectedAnimalId:', selectedAnimalId);
     const result = await createOrder(orderData);
 
     Swal.fire({

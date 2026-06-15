@@ -98,30 +98,35 @@ export async function renderCategories() {
 }
 
 function renderPetList(items) {
-  console.log('renderPetList', items.length);
   const petListItems = (items ?? [])
     .map(
-      item => `<li class="pet-list-card-item">
-            <img class="pet-list-card-img" src="${item.image}" />
-            <p class="pet-list-card-type">${item.species}</p>
-            <p class="pet-list-card-name">${item.name}</p>
-            <ul class="pet-list-card-filter">
-            ${(item.categories ?? [])
-              .map(
-                cat => `<li class="pet-list-card-filter-item">${cat.name}</li>`
-              )
-              .join('')}
-            </ul>
-            <div class="pet-list-card-age-gender">
-            <p class="pet-list-card-age">${item.age}</p>
-            <p class="pet-list-card-gender">${item.gender}</p>
-            </div>
-            <p class="pet-list-card-about">${item.shortDescription}</p>
-            <button type="button" class="pet-list-card-more-btn" 
-            data-id="${item._id}">
-            Дізнатись більше
-            </button>
-        </li>`
+      item => `
+      <li class="pet-list-card-item" data-id="${item._id}">
+        <img class="pet-list-card-img" src="${item.image}" alt="${item.name}" />
+
+        <p class="pet-list-card-type">${item.species}</p>
+        <p class="pet-list-card-name">${item.name}</p>
+
+        <ul class="pet-list-card-filter">
+          ${(item.categories ?? [])
+            .map(
+              cat => `<li class="pet-list-card-filter-item">${cat.name}</li>`
+            )
+            .join('')}
+        </ul>
+
+        <div class="pet-list-card-age-gender">
+          <p class="pet-list-card-age">${item.age}</p>
+          <p class="pet-list-card-gender">${item.gender}</p>
+        </div>
+
+        <p class="pet-list-card-about">${item.shortDescription}</p>
+
+        <button type="button" class="pet-list-card-more-btn">
+          Дізнатись більше
+        </button>
+      </li>
+    `
     )
     .join('');
   if (petListElem) {
