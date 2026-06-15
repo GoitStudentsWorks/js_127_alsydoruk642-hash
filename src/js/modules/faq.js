@@ -1,8 +1,8 @@
 export async function renderFeedbacks() {
   try {
-    const feedbacks = await getFeedbacks();
+    const data = await getFeedbacks();
 
-    createFeedback(feedbacks);
+    createFeedback(data.feedbacks);
   } catch (error) {
     console.log(error);
   }
