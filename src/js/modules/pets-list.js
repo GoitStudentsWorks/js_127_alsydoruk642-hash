@@ -9,7 +9,7 @@ let heightCard = 0;
 const categoriesElem = document.querySelector('.pet-list-categories');
 const petListElem = document.querySelector('.pet-list-cards');
 const moreBtn = document.querySelector('.pet-list-more-btn');
-const loader = document.querySelector('.pet-list-loader');
+const loader = document.querySelector('.loader');
 
 categoriesElem.addEventListener('click', onCategoriesClick);
 petListElem.addEventListener('click', onCardClick);
@@ -22,6 +22,7 @@ function checkCountCards() {
 function showLoadMoreButton() {
   if (moreBtn) {
     moreBtn.classList.remove('hidden');
+    moreBtn.blur();
   }
 }
 
