@@ -1,13 +1,185 @@
-/* #region (**This Name your Section**) Mobile */
+/* #region (**FAQ**) Mobile */
+.list-point {
+  list-style: disc;
+}
 
-/* #endregion **This Name your Section**) Mobile */
+.faq-container {
+  margin: 0 auto;
+}
 
-/* #region **This Name your Section**) Tablet */
+.faq-title {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #02060a;
+  margin-bottom: 40px;
+  margin-top: 64px;
+}
+
+.faq-list {
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item-title {
+  padding: 20px 24px;
+}
+
+.faq-item {
+  background-color: #eee9e3;
+  border: 0px solid rgba(2, 6, 10, 0.15);
+  border-radius: 8px;
+  /* padding: 20px 24px 24px 24px;
+  margin-bottom: 16px; */
+}
+
+.faq-icon {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+}
+
+.ac.is-active .faq-icon {
+  transform: rotate(45deg);
+}
+.ac-panel {
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #02060a;
+  padding: 0;
+  text-align: left;
+}
+.faq-answer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 24px 24px 24px;
+  /* margin-bottom: 16px; */
+}
+
+.faq-answer-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
+}
+
+.faq-answer-list {
+  padding: 0px 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* #endregion **FAQ**) Mobile */
+
+/* #region **FAQ**) Tablet */
 @media screen and (min-width: 768px) {
+  .faq-title {
+    margin-bottom: 80px;
+  }
+  .faq-question {
+    width: 100%;
+  }
 }
-/* #endregion **This Name your Section**) Tablet \*/
+/* #endregion FAQ **) Tablet \*/
 
-/* #region **This Name your Section**) Desktop */
+/* #region **FAQ**) Desktop */
 @media screen and (min-width: 1366px) {
+  .list-point {
+    list-style: disc;
+  }
+
+  .faq {
+    padding: 80px 0;
+  }
+
+  .faq-container {
+    max-width: 864px;
+    margin: 0 auto;
+  }
+  .faq-title {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #02060a;
+    margin-bottom: 80px;
+    margin-top: 80px;
+  }
+  .faq-list {
+    margin-bottom: 80px;
+  }
+
+  .faq-item {
+    background-color: #eee9e3;
+    border: 0px solid rgba(2, 6, 10, 0.15);
+    border-radius: 8px;
+    /* padding: 0px 24px 24px 24px; */
+    /* margin-bottom: 16px; */
+  }
+
+  .faq-icon {
+    margin-left: auto;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #02060a;
+    padding: 0;
+    text-align: left;
+  }
+
+  .faq-answer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .faq-answer-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #02060a;
+  }
+  .faq-answer-list {
+    padding: 0;
+    padding-left: 24px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
-/* #endregion **This Name your Section**) Desktop \*/
+/* #endregion **FAQ**) Desktop \*/
