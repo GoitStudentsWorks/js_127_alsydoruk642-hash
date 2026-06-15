@@ -1,7 +1,4 @@
-
-
 /**
- 
  * @param {Object} animal
  */
 export function openAnimalModal(animal) {
@@ -51,9 +48,33 @@ export function openAnimalModal(animal) {
   
   document.body.style.overflow = 'hidden';
 
+  // Стандартні слухачі закриття
   backdrop.querySelector('.animal-modal-close').addEventListener('click', closeAnimalModal);
   backdrop.addEventListener('click', onBackdropClick);
   window.addEventListener('keydown', onEscPress);
+
+  // ========================================================
+  // ОНОВЛЕНИЙ ФУНКЦІОНАЛ: ЗВ'ЯЗОК З МОДАЛКОЮ (order-modal)
+  // ========================================================
+  const takeHomeBtn = backdrop.querySelector('.animal-modal-btn');
+  if (takeHomeBtn) {
+    takeHomeBtn.addEventListener('click', () => {
+      // 1. Закриваємо поточну модалку з деталями
+      closeAnimalModal();
+
+      // 2. Шукаємо на сторінці майбутню модалку Роми за ID
+        const orderModal = document.getElementById('order-modal');
+        
+      // Модалка з формою вже є.
+      if (orderModal) {
+        orderModal.classList.remove('is-hidden');
+        document.body.style.overflow = 'hidden'; 
+      } else {
+        // Якщо розмітки колеги ще немає на сторінці, звіт в консоль
+        console.log('Кнопка "Взяти додому" працює!');
+      }
+    });
+  }
 }
 
 function closeAnimalModal() {
@@ -78,30 +99,29 @@ function onEscPress(event) {
   }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const petListContainer = document.querySelector('.pet-list-cards');
 
   if (petListContainer) {
     petListContainer.addEventListener('click', (event) => {
-           const moreBtn = event.target.closest('.pet-list-card-more-btn');
+      const moreBtn = event.target.closest('.pet-list-card-more-btn');
       if (!moreBtn) return;
 
-            const card = moreBtn.closest('.pet-list-card') || moreBtn.closest('li');
+      const card = moreBtn.closest('.pet-list-card') || moreBtn.closest('li');
       if (!card) return;
 
-           const animalData = {
+      const animalData = {
         img: card.querySelector('.pet-list-card-img')?.src || card.querySelector('img')?.src || '',
         name: card.querySelector('.pet-list-card-title')?.textContent?.trim() || 'Тваринка',
         type: card.querySelector('.pet-list-card-type')?.textContent?.trim() || 'Вид',
         meta: card.querySelector('.pet-list-card-meta')?.textContent?.trim() || card.querySelector('.animal-modal-meta')?.textContent?.trim() || 'Вік і стать',
         
-                description: card.querySelector('.pet-list-card-desc')?.textContent?.trim() || 'Ніжний та ласкавий малюк. Дуже любить сидіти на ручках.',
+        description: card.querySelector('.pet-list-card-desc')?.textContent?.trim() || 'Ніжний та ласкавий малюк. Дуже любить сидіти на ручках.',
         health: card.querySelector('.pet-list-card-health')?.textContent?.trim() || 'Здоровий, кастрований, вакцинований. Потребує регулярного вичісування шерсті.',
         behavior: card.querySelector('.pet-list-card-behavior')?.textContent?.trim() || 'Бажано бути єдиною твариною в сім\'ї. Не любить конкуренції за увагу.'
       };
 
-            openAnimalModal(animalData);
+      openAnimalModal(animalData);
     });
   }
 });
