@@ -10,6 +10,7 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+  display: none;
 }
 
 .pet-list-section {
@@ -50,9 +51,7 @@
   height: 41px;
   color: #02060a;
   background-color: transparent;
-  transition:
-    font-weight 250ms ease-in-out,
-    background-color 250ms ease-in-out;
+  transition: font-weight 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
 .pet-list-categories-btn:hover,
@@ -165,7 +164,8 @@
 }
 
 .pet-list-card-more-btn:active {
-  background-color: #c3b49d;
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
 .pet-list-more-btn {
@@ -180,19 +180,18 @@
   width: 100%;
   height: 45px;
   background-color: #88765c;
-  transition:
-    background-color 250ms ease-in-out,
-    color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 .pet-list-more-btn:hover,
 .pet-list-more-btn:focus {
   background-color: #eee9e3;
+  color: #02060a;
 }
 
 .pet-list-more-btn:active {
-  background-color: #eee9e3;
-  color: #02060a;
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
 .loader {
@@ -204,7 +203,6 @@
   border-radius: 50%;
   display: block;
   margin: 0 auto;
-  position: relative;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }

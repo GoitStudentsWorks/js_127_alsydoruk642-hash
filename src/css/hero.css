@@ -1,13 +1,182 @@
-/* #region (**This Name your Section**) Mobile */
+/* HERO для екранів від 320px до 767px*/ 
+.hero {
+    padding-top: 64px;
+    padding-bottom: 80px;
+    background-color: #f4f4f4;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url('../img/webp/hero-mobil.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 0.5s ease-in-out;
+}
 
-/* #endregion **This Name your Section**) Mobile */
+/* Мобільна ретіна */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url('../img/webp/hero-mobil@2.webp');
+        background-position: 70% center;
+    }
+}
 
-/* #region **This Name your Section**) Tablet */
+.hero-container {
+    text-align: left;
+    width: 100%;
+    max-width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.hero-title {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: #fff;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    letter-spacing: -1px;
+    max-width: 310px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: rgba(143, 117, 92, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms ease;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+    background-color: rgba(143, 117, 92, 0.8);
+    outline: none;
+}
+
+/* 
+  TABLET Вмикається від 768px 
+  */
 @media screen and (min-width: 768px) {
-}
-/* #endregion **This Name your Section**) Tablet \*/
+    .hero {
+        padding-top: 64px;
+        padding-bottom: 230px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url('../img/webp/hero-tablet.webp');
+        background-size: 100% auto;
+        background-position: right top;
+    }
 
-/* #region **This Name your Section**) Desktop */
-@media screen and (min-width: 1366px) {
+    .hero-container {
+        width: 100%;
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 32px;
+        padding-right: 32px;
+        box-sizing: border-box;
+    }
+
+    .hero-title {
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    max-width: 622px;
+    width: 100%;
+    }
+
+    .hero-description {
+        font-size: 16px;
+        max-width: 440px;
+        margin-bottom: 40px;
+        line-height: 1.5;
+        max-width: 530px;
+        letter-spacing: 0px;
+    }
 }
-/* #endregion **This Name your Section**) Desktop \*/
+
+/* Планшетна ретіна */
+@media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-width: 768px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url('../img/webp/hero-tablet@2.jpg');
+        background-size:cover;
+        background-position: right top;
+    }
+}
+
+/* 
+ HERO DESKTOP Вмикається від 1440px
+ */
+@media screen and (min-width: 1440px) {
+    .hero {
+        padding-top: 128px;
+        padding-bottom: 400px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url('../img/webp/hero-desktop.jpg');
+        background-size:cover;
+        background-position: right top;
+    }
+
+    .hero-container {
+        max-width: 1440px;
+        padding-left: 64px;
+        padding-right: 40px;
+    }
+
+    .hero-title {
+        font-size: 56px;
+        max-width: 622px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+        max-width: 480px;
+    }
+}
+
+/* Десктопна ретіна */
+@media screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
+screen and (min-width: 1440px) and (min-resolution: 192dpi) {
+    .hero {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+            url('../img/webp/hero-desktop@2.jpg');
+        background-size:cover;
+        background-position: right top;
+    }
+}
+
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
