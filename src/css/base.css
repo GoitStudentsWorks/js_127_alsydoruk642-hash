@@ -26,20 +26,3 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-/* !Marking for CSS (You need to copy and uncomited) */
-/* region (This Name your Section) Mobile */
-/* /This your code/ */
-/* endregion (This Name your Section) Mobile */
-
-/* region (This Name your Section) Tablet */
-@media screen and (min-width: 768px) {
-  /* /This your code/ */
-}
-/* endregion (This Name your Section) Tablet */
-
-/* region (This Name your Section) Desktop */
-@media screen and (min-width: 1366px) {
-  /* /This your code/ */
-}
-/* endregion (This Name your Section) Desktop */
