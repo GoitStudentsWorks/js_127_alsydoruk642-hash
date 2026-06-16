@@ -42,8 +42,7 @@
   padding: 12px;
   position: static;
 }
-/* !important;
-} */
+
 .swiper-button-next.success-button-next:hover,
 .swiper-button-prev.success-button-prev:hover,
 .swiper-button-next.success-button-next:focus,
@@ -222,3 +221,10 @@
   }
 }
 /* #endregion **This Name your Section**) Desktop \*/
+
+.mySwiper
+  .swiper-pagination.success-swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
+  left: auto;
+  right: auto;
+  transform: none;
+}

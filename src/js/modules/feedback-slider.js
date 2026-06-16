@@ -32,7 +32,6 @@ export function createFeedback(feedbacks) {
       `
     )
     .join('');
-  console.log(feedbacks);
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
@@ -65,6 +64,7 @@ export function createFeedback(feedbacks) {
 
     breakpoints: {
       768: {
+        dynamicBullets: true,
         slidesPerView: 2,
         spaceBetween: 32,
       },
@@ -79,4 +79,13 @@ export function createFeedback(feedbacks) {
     swiper.pagination.render();
     swiper.pagination.update();
   });
+}
+
+function updatePagination(e) {
+  swiper.params.pagination.dynamicBullets = e.matches;
+
+  swiper.pagination.destroy();
+  swiper.pagination.init();
+  swiper.pagination.render();
+  swiper.pagination.update();
 }

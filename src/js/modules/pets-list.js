@@ -1,24 +1,22 @@
 import { getCategories, getCategory } from '../api/api-categories';
-console.log('pets-list.js loaded');
 
 let curPage = 1;
 let countPages = 1;
 let countCards = 8;
 let categoryId = 'all';
 let heightCard = 0;
+let paginIdx = 0;
 
 const categoriesElem = document.querySelector('.pet-list-categories');
 const petListElem = document.querySelector('.pet-list-cards');
 const moreBtn = document.querySelector('.pet-list-more-btn');
+const paginBox = document.querySelector('.pet-list-pagin');
 const loader = document.querySelector('.loader');
 
-categoriesElem.addEventListener('click', onCategoriesClick);
-petListElem.addEventListener('click', onCardClick);
-moreBtn.addEventListener('click', onMoreBtnClick);
-
-function checkCountCards() {
-  return window.innerWidth < 1366 ? 8 : 9;
-}
+if (categoriesElem) categoriesElem.addEventListener('click', onCategoriesClick);
+if (petListElem) petListElem.addEventListener('click', onCardClick);
+if (moreBtn) moreBtn.addEventListener('click', onMoreBtnClick);
+if (paginBox) paginBox.addEventListener('click', onPaginBtnClick);
 
 function showLoadMoreButton() {
   if (moreBtn) {
@@ -30,6 +28,40 @@ function showLoadMoreButton() {
 function hideLoadMoreButton() {
   if (moreBtn) {
     moreBtn.classList.add('hidden');
+  }
+}
+
+function showPaginBox(count) {
+  if (paginBox) {
+    let markup = `<button type="button" class="pet-list-pagin-btn left disabled">
+        <svg width="24" height="24">
+          <use href="../public/sprite.svg#icon-arrow_left"></use>
+        </svg>
+      </button>`;
+    let i = 1;
+    while (i <= count && i <= 3) {
+      markup += `<button type="button" class="pet-list-pagin-num 
+      ${i === 1 ? ' active' : ''}" data-idx="${i - 1}">${i}</button>`;
+      i++;
+    }
+    if (count > 3) {
+      markup += `<span class="pet-list-pagin-dot">...</span>
+        <button type="button" class="pet-list-pagin-num" data-idx="3">${count}</button>`;
+    }
+    markup += `<button type="button" class="pet-list-pagin-btn right 
+      ${count <= 1 ? 'disabled' : ''}">
+        <svg width="24" height="24">
+          <use href="../public/sprite.svg#icon-arrow_right"></use>
+        </svg>
+      </button>`;
+    paginBox.innerHTML = markup;
+    paginBox.classList.remove('hidden');
+  }
+}
+
+function hidePaginBox() {
+  if (paginBox) {
+    paginBox.classList.add('hidden');
   }
 }
 
@@ -45,11 +77,15 @@ function hideLoader() {
   }
 }
 
+function checkCountCards() {
+  return window.innerWidth < 1366 ? 8 : 9;
+}
+
 function checkMoreButton() {
   if (curPage < countPages) {
     showLoadMoreButton();
   } else {
-    alert('В базі даних більше нема карток');
+    // alert('В базі даних більше нема карток');
   }
 }
 
@@ -135,11 +171,11 @@ function renderPetList(items) {
 }
 
 export async function startPetList(category) {
-  console.log('startPetList', category);
   categoryId = category;
   curPage = 1;
   countCards = checkCountCards();
   hideLoadMoreButton();
+  hidePaginBox();
   showLoader();
   clearPetList();
   try {
@@ -150,7 +186,11 @@ export async function startPetList(category) {
     }
     countPages = Math.ceil(items.totalItems / countCards);
     renderPetList(items.animals);
-    checkMoreButton();
+    if (countCards === 8) {
+      checkMoreButton();
+    } else {
+      showPaginBox(countPages);
+    }
     const cardItem = document.querySelector('.pet-list-card-item');
     if (cardItem) {
       heightCard = cardItem.getBoundingClientRect().height;
@@ -158,7 +198,6 @@ export async function startPetList(category) {
       heightCard = 0;
     }
   } catch (error) {
-    // console.error(error);
     alert('Помилка завантаження карток тваринок');
   } finally {
     hideLoader();
@@ -166,18 +205,17 @@ export async function startPetList(category) {
 }
 
 async function continuePetList() {
-  console.log('continuePetList');
-  curPage += 1;
-  countCards = checkCountCards();
+  if (countCards === 8) curPage += 1;
   hideLoadMoreButton();
   showLoader();
   try {
     const items = await getCategory(categoryId, curPage, countCards);
     renderPetList(items.animals);
-    scrollCards(1);
-    checkMoreButton();
+    if (countCards === 8) {
+      scrollCards(1);
+      checkMoreButton();
+    }
   } catch (error) {
-    // console.error(error);
     alert('Помилка завантаження карток тваринок');
   }
   hideLoader();
@@ -201,4 +239,81 @@ function onCardClick(event) {
   const btn = event.target.closest('.pet-list-card-more-btn');
   if (!btn) return;
   const id = btn.dataset.id;
+}
+
+function onPaginBtnClick(event) {
+  const cp = curPage;
+  const t = event.target.closest('button');
+  if (!t) return;
+  const left = paginBox.querySelector('.pet-list-pagin-btn.left');
+  const right = paginBox.querySelector('.pet-list-pagin-btn.right');
+  const abtn = paginBox.querySelector('.pet-list-pagin-num.active');
+  const btn = paginBox.querySelectorAll('.pet-list-pagin-num');
+  // остання сторінка
+  if (t === btn[btn.length - 1]) {
+    curPage = Number(t.textContent);
+    paginIdx = btn.length - 1;
+    if (curPage > 3) {
+      btn[2].textContent = curPage - 1;
+      btn[1].textContent = curPage - 2;
+      btn[0].textContent = curPage - 3;
+    }
+  }
+  if (t.classList.contains('left')) {
+    curPage -= 1;
+    if (curPage === 1) {
+      left.classList.add('disabled');
+    } else {
+      left.classList.remove('disabled');
+    }
+    right.classList.remove('disabled');
+    if (paginIdx > 0) {
+      btn[paginIdx].classList.remove('active');
+      paginIdx--;
+      btn[paginIdx].classList.add('active');
+    } else {
+      btn[0].textContent = curPage;
+      btn[1].textContent = curPage + 1;
+      btn[2].textContent = curPage + 2;
+    }
+  } else if (t.classList.contains('right')) {
+    curPage += 1;
+    if (curPage === countPages) {
+      right.classList.add('disabled');
+    } else {
+      right.classList.remove('disabled');
+    }
+    left.classList.remove('disabled');
+    if (paginIdx < 2 || curPage === countPages) {
+      btn[paginIdx].classList.remove('active');
+      paginIdx++;
+      btn[paginIdx].classList.add('active');
+    } else {
+      btn[2].textContent = curPage;
+      btn[1].textContent = curPage - 1;
+      btn[0].textContent = curPage - 2;
+    }
+  } else {
+    if (t !== abtn) {
+      abtn.classList.remove('active');
+      t.classList.add('active');
+      curPage = Number(t.textContent);
+      if (curPage > 1) {
+        left.classList.remove('disabled');
+      } else {
+        left.classList.add('disabled');
+      }
+      if (curPage != countPages) {
+        right.classList.remove('disabled');
+      } else {
+        right.classList.add('disabled');
+      }
+      paginIdx = t.dataset.idx;
+    }
+  }
+  if (cp !== curPage) {
+    clearPetList();
+    continuePetList();
+    petListElem.scrollIntoView({ behavior: 'smooth' });
+  }
 }
