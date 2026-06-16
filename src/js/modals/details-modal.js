@@ -117,14 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
           card.querySelector('img')?.src ||
           '',
         name:
-          card.querySelector('.pet-list-card-title')?.textContent?.trim() ||
+          card.querySelector('.pet-list-card-name')?.textContent?.trim() ||
           'Тваринка',
         type:
           card.querySelector('.pet-list-card-type')?.textContent?.trim() ||
           'Вид',
         meta:
-          card.querySelector('.pet-list-card-meta')?.textContent?.trim() ||
-          card.querySelector('.animal-modal-meta')?.textContent?.trim() ||
+          card.querySelector('.pet-list-card-age')?.textContent?.trim() ||
+          card.querySelector('.pet-list-card-gender')?.textContent?.trim() ||
           'Вік і стать',
 
         description:

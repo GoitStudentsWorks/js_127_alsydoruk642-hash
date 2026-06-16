@@ -1,17 +1,21 @@
 /* #region (**This Name your Section**) Mobile */
+.success-stories {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
 .success-stories-title {
   font-family: 'Open Sans', sans-serif;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
-  padding-top: 64px;
-  padding-bottom: 24px;
+  margin-bottom: 24px;
 }
 .success-stories-subtitle {
   line-height: 1.5;
   text-align: center;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 .success-stories-rate {
@@ -22,14 +26,14 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
 .success-stories-author {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.5;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 .swiper-buttons.success-swiper-buttons {
   display: flex;
@@ -75,7 +79,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 64px;
 }
 .swiper-pagination.success-swiper-pagination {
   position: static;
@@ -159,12 +162,6 @@
   opacity: 0.4;
   pointer-events: none; */
 
-.swiper-controls.success-swiper-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 64px;
-}
 .swiper-pagination.success-swiper-pagination {
   position: static;
   width: auto;
@@ -204,7 +201,6 @@
     width: 80px;
   }
   .success-stories-title {
-    padding-top: 80px;
     font-size: 48px;
   }
   .success-stories-subtitle {

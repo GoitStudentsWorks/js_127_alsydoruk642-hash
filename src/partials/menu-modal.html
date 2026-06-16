@@ -1,7 +1,7 @@
 <div class="backdrop" data-modal>
   <div class="mobile-menu">
     <div class="menu-header">
-      <a class="menu-logo" href="./index.html">
+      <a class="menu-logo" href="./index.html" aria-label="Home page">
         <svg class="menu-icon-logo" width="157" height="51">
           <use href="./sprite.svg#icon-logotype"></use>
         </svg>
@@ -18,10 +18,24 @@
       </button>
     </div>
     <ul class="mobile-list">
-      <li><a class="nav-link" href="#pets-list">Знайди друга</a></li>
-      <li><a class="nav-link" href="#about-us">Про нас</a></li>
-      <li><a class="nav-link" href="#faq">Часті запитання</a></li>
-      <li><a class="nav-link" href="#success-stories">Історії успіху</a></li>
+      <li>
+        <a class="nav-link" href="#pets-list" aria-label="Знайти друга"
+          >Знайди друга</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="#about-us" aria-label="Про нас">Про нас</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#faq" aria-label="Часті запитання"
+          >Часті запитання</a
+        >
+      </li>
+      <li>
+        <a class="nav-link" href="#success-stories" aria-label="Історії успіху"
+          >Історії успіху</a
+        >
+      </li>
     </ul>
     <button class="menu-friend-btn" onclick="location.href = '#pets-list'">
       Взяти друга

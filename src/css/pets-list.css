@@ -28,7 +28,7 @@
 }
 
 .pet-list-subtitle {
-  padding-top: 16px;
+  margin-top: 16px;
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
@@ -36,7 +36,7 @@
 }
 
 .pet-list-categories {
-  padding-top: 32px;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -51,7 +51,9 @@
   height: 41px;
   color: #02060a;
   background-color: transparent;
-  transition: font-weight 250ms ease-in-out, background-color 250ms ease-in-out;
+  transition:
+    font-weight 250ms ease-in-out,
+    background-color 250ms ease-in-out;
 }
 
 .pet-list-categories-btn:hover,
@@ -65,8 +67,8 @@
 }
 
 .pet-list-cards {
-  padding-top: 32px;
-  padding-bottom: 40px;
+  margin-top: 32px;
+  margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,14 +90,14 @@
 }
 
 .pet-list-card-type {
-  padding-top: 16px;
+  margin-top: 16px;
   font-size: 10px;
   line-height: 1.5;
   color: #02060a;
 }
 
 .pet-list-card-name {
-  padding-top: 4px;
+  margin-top: 4px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.4;
@@ -104,7 +106,7 @@
 }
 
 .pet-list-card-filter {
-  padding-top: 4px;
+  margin-top: 4px;
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
@@ -139,8 +141,8 @@
 }
 
 .pet-list-card-about {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
   font-size: 12px;
   line-height: 1.5;
   color: #02060a;
@@ -165,7 +167,8 @@
 }
 
 .pet-list-card-more-btn:active {
-  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
@@ -180,7 +183,9 @@
   width: 100%;
   height: 45px;
   background-color: #88765c;
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition:
+    background-color 250ms ease-in-out,
+    color 250ms ease-in-out;
 }
 
 .pet-list-more-btn:hover,
@@ -190,7 +195,8 @@
 }
 
 .pet-list-more-btn:active {
-  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
@@ -220,7 +226,8 @@
 }
 
 .pet-list-pagin-btn:active {
-  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+  box-shadow:
+    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
@@ -349,13 +356,13 @@
 /* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
   .pet-list-section {
-    padding-top: 80px;
+    margin-top: 80px;
   }
   .pet-list-categories {
-    padding-top: 40px;
+    margin-top: 40px;
   }
   .pet-list-cards {
-    padding-top: 40px;
+    margin-top: 40px;
   }
   .pet-list-card-item {
     width: calc((100% - 2 * 32px) / 3);
