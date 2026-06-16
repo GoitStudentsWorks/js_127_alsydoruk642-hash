@@ -96,13 +96,10 @@
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
-  padding-top: 64px;
-  padding-bottom: 24px;
 }
 .success-stories-subtitle {
   line-height: 1.5;
   text-align: center;
-  padding-bottom: 40px;
 }
 
 .success-stories-rate {
@@ -113,14 +110,12 @@
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 18px;
   line-height: 1.5;
-  padding-bottom: 32px;
 }
 .success-stories-author {
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 1.5;
-  padding-bottom: 40px;
 }
 .swiper-buttons.success-swiper-buttons {
   display: flex;
