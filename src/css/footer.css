@@ -1,9 +1,10 @@
 /* #region (**This Name your Section**) Mobile */
 .footer {
   background-color: #c3b49d;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 .footer-logo {
-  padding-top: 48px;
   margin: 0 auto;
   width: 298px;
   height: 97px;
@@ -27,10 +28,10 @@
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  padding-top: 32px;
+  margin-top: 32px;
 }
 .nav-social-link-container {
-  padding-top: 32px;
+  margin-top: 32px;
 }
 .footer-nav-link {
   font-weight: 600;
@@ -59,7 +60,7 @@
   flex-direction: row;
   justify-content: center;
   gap: 24px;
-  padding-bottom: 80px;
+  margin-bottom: 80px;
 }
 .footer-social-icon {
   transition: transform 0.3s ease;
@@ -76,13 +77,12 @@
   margin: 0;
 }
 .footer-copyright {
-  padding-top: 24px;
+  margin-top: 32px;
   text-align: center;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
   color: #02060a;
-  padding-bottom: 48px;
 }
 
 /* #endregion **This Name your Section**) Mobile */
@@ -98,19 +98,13 @@
     gap: 32px;
     justify-content: center;
   }
-  .footer-copyright {
-    padding-top: 32px;
-  }
 }
 /* #endregion **This Name your Section**) Tablet \*/
 
 /* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
   .footer-copyright {
-    padding-bottom: 64px;
-  }
-  .footer-logo {
-    padding-top: 64px;
+    margin-top: 64px;
   }
 }
 /* #endregion **This Name your Section**) Desktop \*/

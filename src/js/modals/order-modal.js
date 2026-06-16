@@ -87,9 +87,15 @@ form.addEventListener('submit', async e => {
   const orderData = {
     name: nameInput.value.trim(),
     phone: phoneInput.value.trim(),
-    comment: commentInput.value.trim(),
+    // comment: commentInput.value.trim(),
     animalId: selectedAnimalId,
   };
+
+  const comment = commentInput.value.trim();
+
+  if (comment) {
+    orderData.comment = comment;
+  }
 
   try {
     const result = await createOrder(orderData);

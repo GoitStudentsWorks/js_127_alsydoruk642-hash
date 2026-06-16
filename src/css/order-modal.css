@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 body.no-scroll {
@@ -28,13 +29,14 @@ body.no-scroll {
   min-height: 763px;
   background-color: #f6f4f1;
   margin: auto;
+  gap: 48px;
 }
 
-.application-content {
+/* .application-content {
   display: flex;
   flex-direction: column;
   gap: 48px;
-}
+} */
 
 .app-modal-close {
   position: absolute;
@@ -62,8 +64,7 @@ body.no-scroll {
 }
 
 .app-modal-title {
-  width: 240px;
-  margin: 0;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
@@ -75,9 +76,9 @@ body.no-scroll {
 .app-modal-form {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 24px;
+
   width: 295px;
   height: 476px;
 }
@@ -86,7 +87,7 @@ body.no-scroll {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  width: 295px;
+  width: 100%;
 }
 
 .modal-label {
@@ -126,6 +127,7 @@ body.no-scroll {
   transition:
     opacity 250ms ease-in-out,
     background-color 250ms ease-in-out;
+  margin-bottom: 8px;
 }
 
 .modal-input:focus,
@@ -176,7 +178,6 @@ body.no-scroll {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 8px;
 
   border: 1px solid #88765c;
   border-radius: 8px;
@@ -195,6 +196,7 @@ body.no-scroll {
   transition:
     opacity 250ms ease-in-out,
     background-color 250ms ease-in-out;
+  margin-top: 24px;
 }
 
 .modal-button:hover,
@@ -222,14 +224,7 @@ body.no-scroll {
   .application {
     width: 704px;
     min-height: 677px;
-  }
-
-  .application-content {
     padding: 64px 32px;
-  }
-
-  .app-modal-title {
-    width: 640px;
   }
 
   .app-modal-form {
@@ -238,10 +233,6 @@ body.no-scroll {
 
   .modal-label {
     margin-bottom: 8px;
-  }
-
-  .modal-field {
-    width: 640px;
   }
 
   .modal-button {
@@ -257,14 +248,10 @@ body.no-scroll {
     width: 768px;
     min-height: 768px;
     height: auto;
-  }
-
-  .application-content {
     padding: 64px;
   }
 
   .app-modal-title {
-    width: 640px;
     font-size: 48px;
   }
 
