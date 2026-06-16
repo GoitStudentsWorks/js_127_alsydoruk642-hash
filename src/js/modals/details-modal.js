@@ -1,6 +1,7 @@
 /**
  * @param {Object} animal
  */
+import { openModal } from './order-modal';
 export function openAnimalModal(animal) {
   const backdrop = document.querySelector('.animal-backdrop');
   if (!backdrop) return;
@@ -45,30 +46,32 @@ export function openAnimalModal(animal) {
   `;
 
   backdrop.classList.remove('is-hidden');
-  
-  document.body.style.overflow = 'hidden';
+
+  document.body.classList.add('no-scroll');
 
   // Стандартні слухачі закриття
-  backdrop.querySelector('.animal-modal-close').addEventListener('click', closeAnimalModal);
+  backdrop
+    .querySelector('.animal-modal-close')
+    .addEventListener('click', closeAnimalModal);
   backdrop.addEventListener('click', onBackdropClick);
   window.addEventListener('keydown', onEscPress);
 
-
-    
   const takeHomeBtn = backdrop.querySelector('.animal-modal-btn');
   if (takeHomeBtn) {
     takeHomeBtn.addEventListener('click', () => {
       closeAnimalModal();
 
-    
       const orderModal = document.querySelector('.backdrop-order');
-      
+
       if (orderModal) {
         orderModal.classList.remove('is-hidden');
-        
-        document.body.style.overflow = 'hidden'; 
+
+        document.body.classList.add('no-scroll');
+        openModal(animal._id);
       } else {
-        console.warn('Бекдроп з класом .backdrop-order не знайдено на сторінці.');
+        console.warn(
+          'Бекдроп з класом .backdrop-order не знайдено на сторінці.'
+        );
       }
     });
   }
@@ -78,9 +81,9 @@ function closeAnimalModal() {
   const backdrop = document.querySelector('.animal-backdrop');
   if (backdrop) {
     backdrop.classList.add('is-hidden');
-    backdrop.innerHTML = ''; 
+    backdrop.innerHTML = '';
   }
-  document.body.style.overflow = '';
+  document.body.classList.remove('no-scroll');
   window.removeEventListener('keydown', onEscPress);
 }
 
@@ -100,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const petListContainer = document.querySelector('.pet-list-cards');
 
   if (petListContainer) {
-    petListContainer.addEventListener('click', (event) => {
+    petListContainer.addEventListener('click', event => {
       const moreBtn = event.target.closest('.pet-list-card-more-btn');
       if (!moreBtn) return;
 
@@ -108,14 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!card) return;
 
       const animalData = {
-        img: card.querySelector('.pet-list-card-img')?.src || card.querySelector('img')?.src || '',
-        name: card.querySelector('.pet-list-card-title')?.textContent?.trim() || 'Тваринка',
-        type: card.querySelector('.pet-list-card-type')?.textContent?.trim() || 'Вид',
-        meta: card.querySelector('.pet-list-card-meta')?.textContent?.trim() || card.querySelector('.animal-modal-meta')?.textContent?.trim() || 'Вік і стать',
-        
-        description: card.querySelector('.pet-list-card-desc')?.textContent?.trim() || 'Ніжний та ласкавий малюк. Дуже любить сидіти на ручках.',
-        health: card.querySelector('.pet-list-card-health')?.textContent?.trim() || 'Здоровий, кастрований, вакцинований. Потребує регулярного вичісування шерсті.',
-        behavior: card.querySelector('.pet-list-card-behavior')?.textContent?.trim() || 'Бажано бути єдиною твариною в сім\'ї. Не любить конкуренції за увагу.'
+        _id: card.dataset.id,
+        img:
+          card.querySelector('.pet-list-card-img')?.src ||
+          card.querySelector('img')?.src ||
+          '',
+        name:
+          card.querySelector('.pet-list-card-title')?.textContent?.trim() ||
+          'Тваринка',
+        type:
+          card.querySelector('.pet-list-card-type')?.textContent?.trim() ||
+          'Вид',
+        meta:
+          card.querySelector('.pet-list-card-meta')?.textContent?.trim() ||
+          card.querySelector('.animal-modal-meta')?.textContent?.trim() ||
+          'Вік і стать',
+
+        description:
+          card.querySelector('.pet-list-card-desc')?.textContent?.trim() ||
+          'Ніжний та ласкавий малюк. Дуже любить сидіти на ручках.',
+        health:
+          card.querySelector('.pet-list-card-health')?.textContent?.trim() ||
+          'Здоровий, кастрований, вакцинований. Потребує регулярного вичісування шерсті.',
+        behavior:
+          card.querySelector('.pet-list-card-behavior')?.textContent?.trim() ||
+          "Бажано бути єдиною твариною в сім'ї. Не любить конкуренції за увагу.",
       };
 
       openAnimalModal(animalData);
