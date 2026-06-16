@@ -76,7 +76,7 @@
   margin: 0;
 }
 .footer-copyright {
-  margin-top: 24px;
+  padding-top: 24px;
   text-align: center;
   font-weight: 400;
   font-size: 12px;
@@ -99,7 +99,7 @@
     justify-content: center;
   }
   .footer-copyright {
-    margin-top: 32px;
+    padding-top: 32px;
   }
 }
 /* #endregion **This Name your Section**) Tablet \*/

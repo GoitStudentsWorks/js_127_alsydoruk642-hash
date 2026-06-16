@@ -6,7 +6,7 @@
 }
 
 .about-us-title {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -69,7 +69,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
+  padding-top: 24px;
 }
 
 .about-us-buttons {
