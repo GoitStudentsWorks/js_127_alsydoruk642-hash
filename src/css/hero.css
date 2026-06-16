@@ -1,3 +1,16 @@
+/* плавне появлення елементів */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* HERO для екранів від 320px до 767px*/
 .hero {
   margin: auto;
@@ -8,22 +21,19 @@
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url('../img/webp/hero-mobil.webp');
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-
-  transition: background-image 0.5s ease-in-out;
-}
-html {
-  scroll-behavior: smooth;
 }
 
 /* Мобільна ретіна */
-@media screen and (-webkit-min-device-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+@media screen and (min-resolution: 2dppx) {
+  .hero-section {
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-mobil@2.webp');
   }
 }
@@ -41,18 +51,16 @@ html {
 }
 
 .hero-title {
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 1.2;
-  color: #fff;
+  color: #ffffff;
   letter-spacing: -0.01em;
   padding-bottom: 16px;
 }
 
 .hero-description {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
@@ -62,31 +70,31 @@ html {
 }
 
 .hero-button {
-  display: inline-block;
-  padding: 14px 28px;
-  background-color: rgba(143, 117, 92, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #ffffff;
-  font-family: 'Open Sans', sans-serif;
+  display: block;
   font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  border-radius: 12px;
-  transition:
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 250ms ease;
+  line-height: 1.5;
+  color: #ffffff;
+  border: 1px solid #88765c;
+  border-radius: 8px;
+  padding: 12px 24px;
+  height: 45px;
+  width: 171px;
+  background-color: #88765c;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 .hero-button:hover,
 .hero-button:focus {
-  background-color: rgba(143, 117, 92, 0.8);
-  outline: none;
+  background-color: #eee9e3;
+  color: #02060a;
 }
 
-/* 
-  TABLET Вмикається від 768px 
-  */
+.hero-button:active {
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+    inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+/*TABLET Вмикається від 768px */
 @media screen and (min-width: 768px) {
   .hero {
     max-width: 768px;
@@ -98,13 +106,7 @@ html {
   }
 
   .hero-container {
-    max-width: 768px;
-
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
-    box-sizing: border-box;
+    padding-bottom: 235px;
   }
 
   .hero-title {
@@ -113,7 +115,6 @@ html {
     letter-spacing: -0.01em;
     padding-bottom: 24px;
     max-width: 622px;
-    width: 100%;
   }
 
   .hero-description {
@@ -127,18 +128,18 @@ html {
 }
 
 /* Планшетна ретіна */
-@media screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
-  screen and (min-width: 768px) and (min-resolution: 192dpi) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+@media screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .hero-section {
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-tablet@2.jpg');
   }
 }
 
-/* 
- HERO DESKTOP Вмикається від 1440px
- */
+/* HERO DESKTOP Вмикається від 1440px */
 @media screen and (min-width: 1366px) {
   .hero {
     max-width: 1440px;
@@ -148,42 +149,33 @@ html {
   }
 
   .hero-container {
-    max-width: 1440px;
-    min-height: 900px;
-    padding-left: 64px;
-    padding-right: 40px;
+    padding-top: 128px;
+    padding-bottom: 413px;
   }
 
   .hero-title {
     font-size: 56px;
-    max-width: 622px;
   }
 
   .hero-description {
     font-size: 18px;
-    max-width: 480px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+    width: 189px;
+    height: 48px;
   }
 }
 
 /* Десктопна ретіна */
-@media screen and (min-width: 1366px) and (-webkit-min-device-pixel-ratio: 2),
-  screen and (min-width: 1366px) and (min-resolution: 192dpi) {
-  .hero {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+@media screen and (min-width: 1366px) and (min-resolution: 2dppx) {
+  .hero-section {
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-desktop@2.jpg');
   }
-}
-
-.fade-in-element {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fade-in-element.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
