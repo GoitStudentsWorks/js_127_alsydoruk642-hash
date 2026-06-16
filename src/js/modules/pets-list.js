@@ -1,4 +1,5 @@
 import { getCategories, getCategory } from '../api/api-categories';
+import Swal from 'sweetalert2';
 
 let curPage = 1;
 let countPages = 1;
@@ -14,9 +15,16 @@ const paginBox = document.querySelector('.pet-list-pagin');
 const loader = document.querySelector('.loader');
 
 if (categoriesElem) categoriesElem.addEventListener('click', onCategoriesClick);
-if (petListElem) petListElem.addEventListener('click', onCardClick);
 if (moreBtn) moreBtn.addEventListener('click', onMoreBtnClick);
 if (paginBox) paginBox.addEventListener('click', onPaginBtnClick);
+
+function errorMsg(msg) {
+  Swal.fire({ icon: 'error', title: msg });
+}
+
+function infoMsg(msg) {
+  Swal.fire({ title: msg });
+}
 
 function showLoadMoreButton() {
   if (moreBtn) {
@@ -85,7 +93,7 @@ function checkMoreButton() {
   if (curPage < countPages) {
     showLoadMoreButton();
   } else {
-    // alert('В базі даних більше нема карток');
+    infoMsg('В базі даних більше нема карток');
   }
 }
 
@@ -129,7 +137,7 @@ export async function renderCategories() {
         ${categoriesMarkup}`;
   } catch {
     // обробка помилки
-    alert('Помилка завантаження категорій хвостиків');
+    errorMsg('Помилка завантаження категорій хвостиків');
   }
 }
 
@@ -181,7 +189,7 @@ export async function startPetList(category) {
   try {
     const items = await getCategory(categoryId, curPage, countCards);
     if (items.animals.length === 0) {
-      alert('Більше нема даних');
+      infoMsg('В базі даних нема карток за цією категорією');
       return;
     }
     countPages = Math.ceil(items.totalItems / countCards);
@@ -198,7 +206,7 @@ export async function startPetList(category) {
       heightCard = 0;
     }
   } catch (error) {
-    alert('Помилка завантаження карток тваринок');
+    errorMsg('Помилка завантаження карток тваринок');
   } finally {
     hideLoader();
   }
@@ -216,7 +224,7 @@ async function continuePetList() {
       checkMoreButton();
     }
   } catch (error) {
-    alert('Помилка завантаження карток тваринок');
+    errorMsg('Помилка завантаження карток тваринок');
   }
   hideLoader();
 }
@@ -233,12 +241,6 @@ function onCategoriesClick(event) {
 
 function onMoreBtnClick() {
   continuePetList();
-}
-
-function onCardClick(event) {
-  const btn = event.target.closest('.pet-list-card-more-btn');
-  if (!btn) return;
-  const id = btn.dataset.id;
 }
 
 function onPaginBtnClick(event) {
