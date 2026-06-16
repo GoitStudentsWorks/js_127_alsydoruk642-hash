@@ -1,8 +1,8 @@
-* {
-  margin: 0;
+/* * {
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-}
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -35,7 +35,8 @@ html {
   background-color: #f6f4f1;
 }
 .header {
-  width: 100%;
+  margin: auto;
+  max-width: 375px;
   background-color: #ffffff;
   border-bottom: 1px solid #e7e9fc;
   box-shadow:
@@ -113,6 +114,9 @@ html {
 }
 
 @media screen and (min-width: 768px) {
+  .header {
+    max-width: 768px;
+  }
   .header-container {
     padding: 0 32px;
     width: 100%;
@@ -122,6 +126,9 @@ html {
   }
 }
 @media screen and (min-width: 1366px) {
+  .header {
+    max-width: 1440px;
+  }
   .header-container {
     padding: 0 64px;
     width: 100%;
