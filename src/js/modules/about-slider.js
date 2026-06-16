@@ -26,9 +26,19 @@ const aboutUsSwiper = new Swiper(
 );
 
 // оновлення dynamicBullets без destroy/init (ВАЖЛИВО)
-window.addEventListener('resize', () => {
-  const isMobile = window.innerWidth < 768;
+// window.addEventListener('resize', () => {
+//   const isMobile = window.innerWidth < 768;
 
-  aboutUsSwiper.params.pagination.dynamicBullets = isMobile;
+//   aboutUsSwiper.params.pagination.dynamicBullets = isMobile;
+//   aboutUsSwiper.pagination.update();
+// });
+
+window.addEventListener('resize', () => {
+  aboutUsSwiper.update();
+  aboutUsSwiper.params.pagination.dynamicBullets = window.innerWidth < 768;
+
+  aboutUsSwiper.pagination.destroy();
+  aboutUsSwiper.pagination.init();
+  aboutUsSwiper.pagination.render();
   aboutUsSwiper.pagination.update();
 });

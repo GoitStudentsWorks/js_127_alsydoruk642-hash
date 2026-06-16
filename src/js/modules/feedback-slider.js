@@ -32,7 +32,6 @@ export function createFeedback(feedbacks) {
       `
     )
     .join('');
-  
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
@@ -56,9 +55,9 @@ export function createFeedback(feedbacks) {
     },
 
     pagination: {
-      el: '.success-swiper-pagination',
-      dynamicBullets: false,
+      el: '.swiper-pagination',
       clickable: true,
+      dynamicBullets: window.innerWidth > 768,
     },
 
     slidesPerView: 1,
@@ -71,16 +70,22 @@ export function createFeedback(feedbacks) {
       },
     },
   });
+  window.addEventListener('resize', () => {
+    swiper.update();
+    swiper.params.pagination.dynamicBullets = window.innerWidth > 768;
+
+    swiper.pagination.destroy();
+    swiper.pagination.init();
+    swiper.pagination.render();
+    swiper.pagination.update();
+  });
 }
 
 function updatePagination(e) {
- 
-
   swiper.params.pagination.dynamicBullets = e.matches;
 
   swiper.pagination.destroy();
   swiper.pagination.init();
   swiper.pagination.render();
   swiper.pagination.update();
-
 }

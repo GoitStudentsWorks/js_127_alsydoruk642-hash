@@ -7,6 +7,12 @@
   margin: 0 auto;
   width: 298px;
   height: 97px;
+  transition: transform 0.3s ease;
+}
+.footer-logo:hover,
+.footer-logo:focus,
+.footer-logo:active {
+  transform: scale(1.05);
 }
 .footer-logo-link {
   display: flex;
@@ -32,6 +38,22 @@
   line-height: 1.5;
   color: #02060a;
 }
+.footer-nav-link {
+  text-decoration: none;
+}
+.footer-nav-link:focus,
+.footer-nav-link:hover {
+  text-decoration-line: underline;
+}
+.footer-nav-link:active {
+  color: #88765c;
+  text-decoration-line: underline;
+}
+.footer-nav-link:disabled {
+  color: #02060a;
+  pointer-events: none;
+  opacity: 0.3;
+}
 .footer-social-list {
   display: flex;
   flex-direction: row;
@@ -39,13 +61,22 @@
   gap: 24px;
   padding-bottom: 80px;
 }
+.footer-social-icon {
+  transition: transform 0.3s ease;
+}
+.footer-social-icon:hover,
+.footer-social-icon:focus,
+.footer-social-icon:active {
+  transform: scale(1.05);
+}
+
 .footer-line {
   border: none;
   border-top: 1px solid rgba(2, 6, 10, 0.15);
   margin: 0;
 }
 .footer-copyright {
-  margin-top: 24px;
+  padding-top: 24px;
   text-align: center;
   font-weight: 400;
   font-size: 12px;
@@ -68,7 +99,7 @@
     justify-content: center;
   }
   .footer-copyright {
-    margin-top: 32px;
+    padding-top: 32px;
   }
 }
 /* #endregion **This Name your Section**) Tablet \*/

@@ -6,7 +6,7 @@
 }
 
 .about-us-title {
-  margin-bottom: 40px;
+  padding-bottom: 40px;
 
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -69,7 +69,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 24px;
+  padding-top: 24px;
 }
 
 .about-us-buttons {
@@ -132,6 +132,13 @@
 
 /* #region **about-us**) Tablet */
 @media screen and (min-width: 768px) {
+  .about-us-controls
+    .swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
   .about-us-text {
     max-width: 548px;
   }
