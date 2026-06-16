@@ -40,11 +40,9 @@
   min-height: 544px;
   text-align: left;
 
-  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+
   box-sizing: border-box;
 }
 
