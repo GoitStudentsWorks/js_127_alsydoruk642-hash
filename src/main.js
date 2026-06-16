@@ -1,4 +1,4 @@
-import { initSmoothScroll, initHeroAnimation } from './js/hero-scroll.js';
+import { initSmoothScroll, initHeroAnimation } from './js/utils/hero-scroll.js';
 import './js/modules/about-slider';
 import './js/utils/constans.js';
 import { renderCategories, startPetList } from './js/modules/pets-list.js';

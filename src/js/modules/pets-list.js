@@ -1,5 +1,4 @@
 import { getCategories, getCategory } from '../api/api-categories';
-console.log('pets-list.js loaded');
 
 let curPage = 1;
 let countPages = 1;
@@ -135,7 +134,6 @@ export async function renderCategories() {
 }
 
 function renderPetList(items) {
-  console.log('renderPetList', items.length);
   const petListItems = (items ?? [])
     .map(
       item => `<li class="pet-list-card-item">
@@ -167,7 +165,6 @@ function renderPetList(items) {
 }
 
 export async function startPetList(category) {
-  console.log('startPetList', category);
   categoryId = category;
   curPage = 1;
   countCards = checkCountCards();
@@ -195,7 +192,6 @@ export async function startPetList(category) {
       heightCard = 0;
     }
   } catch (error) {
-    // console.error(error);
     alert('Помилка завантаження карток тваринок');
   } finally {
     hideLoader();
@@ -214,7 +210,6 @@ async function continuePetList() {
       checkMoreButton();
     }
   } catch (error) {
-    // console.error(error);
     alert('Помилка завантаження карток тваринок');
   }
   hideLoader();

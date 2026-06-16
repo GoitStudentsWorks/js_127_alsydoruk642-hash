@@ -32,7 +32,7 @@ export function createFeedback(feedbacks) {
       `
     )
     .join('');
-  console.log(feedbacks);
+  
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
@@ -51,12 +51,12 @@ export function createFeedback(feedbacks) {
     modules: [Navigation, Pagination],
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.success-button-next',
+      prevEl: '.success-button-prev',
     },
 
     pagination: {
-      el: '.swiper-pagination',
+      el: '.success-swiper-pagination',
       dynamicBullets: false,
       clickable: true,
     },
@@ -65,9 +65,22 @@ export function createFeedback(feedbacks) {
 
     breakpoints: {
       768: {
+        dynamicBullets: true,
         slidesPerView: 2,
         spaceBetween: 32,
       },
     },
   });
+}
+
+function updatePagination(e) {
+ 
+
+  swiper.params.pagination.dynamicBullets = e.matches;
+
+  swiper.pagination.destroy();
+  swiper.pagination.init();
+  swiper.pagination.render();
+  swiper.pagination.update();
+
 }

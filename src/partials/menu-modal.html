@@ -6,7 +6,12 @@
           <use href="./sprite.svg#icon-logotype"></use>
         </svg>
       </a>
-      <button class="close-btn" type="button" data-modal-close>
+      <button
+        class="close-btn"
+        type="button"
+        data-modal-close
+        aria-label="Close menu"
+      >
         <svg class="icon-close" width="24" height="24">
           <use href="./sprite.svg#icon-close"></use>
         </svg>
@@ -18,6 +23,12 @@
       <li><a href="#faq">Часті запитання</a></li>
       <li><a href="#success-stories">Історії успіху</a></li>
     </ul>
-    <button class="friend-btn" onclick="location.href='#pets-list'">Взяти друга</button>
+    <button
+      class="friend-btn"
+      onclick="location.href = '#pets-list'"
+      aria-label="Взяти друга"
+    >
+      Взяти друга
+    </button>
   </div>
 </div>
