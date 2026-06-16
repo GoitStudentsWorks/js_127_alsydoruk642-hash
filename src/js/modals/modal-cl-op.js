@@ -36,7 +36,14 @@ document.addEventListener('keydown', e => {
 });
 
 /* CLOSE on menu link click */
+const menuClsBtn = document.querySelectorAll('.mobile-menu .menu-friend-btn');
 const menuLinks = document.querySelectorAll('.mobile-menu a');
+
+menuClsBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeModal();
+  });
+});
 
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
