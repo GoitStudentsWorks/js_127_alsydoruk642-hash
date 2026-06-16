@@ -50,8 +50,8 @@ export function createFeedback(feedbacks) {
     modules: [Navigation, Pagination],
 
     navigation: {
-      nextEl: '.success-button-next',
-      prevEl: '.success-button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
 
     pagination: {
