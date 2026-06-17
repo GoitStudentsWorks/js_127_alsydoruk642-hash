@@ -43,8 +43,7 @@ function showPaginBox(count) {
   if (paginBox) {
     let markup = `<button type="button" class="pet-list-pagin-btn left disabled">
         <svg width="24" height="24">
-          <use href="${import.meta.env.BASE_URL}sprite.svg#icon-arrow_left"></use>
-          
+          <use href="/public/sprite.svg#icon-arrow_left"></use>
         </svg>
       </button>`;
     let i = 1;
@@ -60,7 +59,7 @@ function showPaginBox(count) {
     markup += `<button type="button" class="pet-list-pagin-btn right 
       ${count <= 1 ? 'disabled' : ''}">
         <svg width="24" height="24">
-          <use href="${import.meta.env.BASE_URL}sprite.svg#icon-arrow_right"></use>
+          <use href="/public/sprite.svg#icon-arrow_right"></use>
         </svg>
       </button>`;
     paginBox.innerHTML = markup;
@@ -167,7 +166,9 @@ function renderPetList(items) {
 
         <p class="pet-list-card-about">${item.shortDescription}</p>
 
-        <button type="button" class="pet-list-card-more-btn" aria-label="Дізнатись більше про ${item.name}">
+        <button type="button" class="pet-list-card-more-btn" aria-label="Дізнатись більше про ${
+          item.name
+        }">
           Дізнатись більше
         </button>
       </li>

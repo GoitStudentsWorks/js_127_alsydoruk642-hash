@@ -2,8 +2,7 @@
 .fade-in-element {
   opacity: 0;
   transform: translateY(20px);
-  transition:
-    opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1),
     transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -19,8 +18,11 @@
   padding-top: 64px;
   padding-bottom: 80px;
   background-color: #f4f4f4;
-  background-image:
-    linear-gradient(to right, rgba(62, 54, 38, 0.74), rgba(62, 54, 38, 0)),
+  background-image: linear-gradient(
+      to right,
+      rgba(62, 54, 38, 0.74),
+      rgba(62, 54, 38, 0)
+    ),
     url('../img/webp/hero-mobil.webp');
   background-position: center;
   background-repeat: no-repeat;
@@ -30,8 +32,11 @@
 /* Мобільна ретіна */
 @media screen and (min-resolution: 2dppx) {
   .hero-section {
-    background-image:
-      linear-gradient(to right, rgba(62, 54, 38, 0.74), rgba(62, 54, 38, 0)),
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-mobil@2.webp');
   }
 }
@@ -75,10 +80,9 @@
   padding: 12px 24px;
   height: 45px;
   width: 171px;
+  white-space: nowrap;
   background-color: #88765c;
-  transition:
-    background-color 250ms ease-in-out,
-    color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 .hero-button:hover,
@@ -88,8 +92,7 @@
 }
 
 .hero-button:active {
-  box-shadow:
-    inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
+  box-shadow: inset 0 4px 6px -2px rgba(0, 0, 0, 0.03),
     inset 0 12px 16px -4px rgba(0, 0, 0, 0.08);
 }
 
@@ -99,8 +102,11 @@
     max-width: 768px;
     padding-top: 64px;
     padding-bottom: 230px;
-    background-image:
-      linear-gradient(to right, rgba(62, 54, 38, 0.74), rgba(62, 54, 38, 0)),
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-tablet.webp');
   }
 
@@ -129,8 +135,11 @@
 /* Планшетна ретіна */
 @media screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero-section {
-    background-image:
-      linear-gradient(to right, rgba(62, 54, 38, 0.74), rgba(62, 54, 38, 0)),
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-tablet@2.webp');
   }
 }
@@ -139,8 +148,11 @@
 @media screen and (min-width: 1366px) {
   .hero {
     max-width: 1440px;
-    background-image:
-      linear-gradient(to right, rgba(62, 54, 38, 0.74), rgba(62, 54, 38, 0)),
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-desktop.webp');
   }
 
@@ -167,8 +179,11 @@
 /* Десктопна ретіна */
 @media screen and (min-width: 1366px) and (min-resolution: 2dppx) {
   .hero-section {
-    background-image:
-      linear-gradient(to right, rgba(62, 54, 38, 0.74), rgba(62, 54, 38, 0)),
+    background-image: linear-gradient(
+        to right,
+        rgba(62, 54, 38, 0.74),
+        rgba(62, 54, 38, 0)
+      ),
       url('../img/webp/hero-desktop@2.webp');
   }
 }

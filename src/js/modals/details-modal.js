@@ -19,7 +19,11 @@ export function openAnimalModal(animal) {
       <div class="animal-modal-info">
         <p class="animal-modal-type">${animal.type}</p>
         <h2 class="animal-modal-title">${animal.name}</h2>
-        <p class="animal-modal-meta">${animal.meta}</p>
+
+        <div class="animal-modal-meta">
+          <p class="animal-modal-info age">${animal.age}</p>
+          <p class="animal-modal-info gender">${animal.gender}</p>
+        </div>
 
         <div class="animal-modal-scroll-container">
           
@@ -122,11 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
         type:
           card.querySelector('.pet-list-card-type')?.textContent?.trim() ||
           'Вид',
-        meta:
+        age:
           card.querySelector('.pet-list-card-age')?.textContent?.trim() ||
+          'Вік',
+        gender:
           card.querySelector('.pet-list-card-gender')?.textContent?.trim() ||
-          'Вік і стать',
-
+          'Стать',
         description:
           card.querySelector('.pet-list-card-desc')?.textContent?.trim() ||
           'Ніжний та ласкавий малюк. Дуже любить сидіти на ручках.',
