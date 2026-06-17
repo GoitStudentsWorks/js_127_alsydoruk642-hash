@@ -5,7 +5,6 @@
   background-color: #c3b49d;
   padding-top: 48px;
   padding-bottom: 48px;
-  max-width: 375px;
 }
 .footer-logo {
   margin: 0 auto;
@@ -92,9 +91,6 @@
 
 /* #region **This Name your Section**) Tablet */
 @media screen and (min-width: 768px) {
-  .footer {
-    max-width: 768px;
-  }
   .footer-logo {
     width: 302px;
     height: 129px;
@@ -109,8 +105,5 @@
 
 /* #region **This Name your Section**) Desktop */
 @media screen and (min-width: 1366px) {
-  .footer {
-    max-width: 1440px;
-  }
 }
 /* #endregion **This Name your Section**) Desktop \*/

@@ -21,8 +21,8 @@ export function openAnimalModal(animal) {
         <h2 class="animal-modal-title">${animal.name}</h2>
 
         <div class="animal-modal-meta">
-          <p class="animal-modal-info age">${animal.age}</p>
-          <p class="animal-modal-info gender">${animal.gender}</p>
+          <p class="animal-modal-info-data age">${animal.age}</p>
+          <p class="animal-modal-info-data gender">${animal.gender}</p>
         </div>
 
         <div class="animal-modal-scroll-container">
