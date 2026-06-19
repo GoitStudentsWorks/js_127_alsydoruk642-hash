@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/project-Home_Friends/",
+    "build": "vite build --base=/js_127_alsydoruk642-hash/",
     "preview": "vite preview"
   },
   "devDependencies": {
